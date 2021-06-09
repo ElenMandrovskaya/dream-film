@@ -3,15 +3,11 @@ import './sass/main.scss';
 import './js/listsStorage';
 import './js/apiService';
 import './js/apiResultsExample'
+import './js/renderMainPage'
 import MoviesApi from './js/apiService';
-import movieList from './templates/movieList.hbs'
+import renderMainPage from './js/renderMainPage';
 
-const movieListRef = document.querySelector('.movie__list');
+renderMainPage();
 
-const movies = new MoviesApi();
 
-movies.getTrendingMovies().then(renderTrends);
 
-function renderTrends(films) {
-    movieListRef.innerHTML =  movieList(films.results);    
-}
