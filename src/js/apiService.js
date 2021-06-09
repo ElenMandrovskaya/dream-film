@@ -11,14 +11,30 @@ export default class MoviesApi {
         this.page = 1;
     }
     async getMovies() {
-        return await axios(
-            `${this.url}search/movie?api_key=${this.key}&query=${this.searchQuery}&language=en-US`,
+        const { data } = axios.get(
+            `/search/movie?api_key=${this.key}&query=${this.searchQuery}&language=en-US`,
         );
+         const { results, total_pages, page, total_results } = data;
+            return { results, total_pages, page, total_results };
     }
     async getTrendingMovies() {
-        return await axios(
-      `${this.url}/trending/movie/day?&api_key=${this.key}&language=en-US&page=${this.page}`,
+        const { data } = await axios.get(
+        `/trending/movie/week?api_key=${this.key}&page=${this.page}`,
     );
+        const { results, total_pages, page, total_results } = data;
+            return { results, total_pages, page, total_results };
+    }
+    incrementPage() {
+        this.page += 1;
+    }
+    decrementPage() {
+        this.page -= 1;
+        }
+    resetPage() {
+        this.page = 1;
+    }
+    selectPage(num) {
+        this.page = num;
     }
     get query() {
         return this.searchQuery;
