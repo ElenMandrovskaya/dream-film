@@ -1,8 +1,7 @@
-function storeIdFunction(nmaeOfList, filmId) {
+export default function storeIdFunction(nmaeOfList, filmId) {
   const queryListData = localStorage.getItem(nmaeOfList);
   if (queryListData !== null) {
     let queryList = queryListData.split(',');
-    console.log(queryList);
     if (queryList.includes(filmId)) {
       queryList.splice(queryList.indexOf(filmId), 1);
       localStorage.setItem(nmaeOfList, queryList);
@@ -17,10 +16,14 @@ function storeIdFunction(nmaeOfList, filmId) {
   } else {
     localStorage.setItem(nmaeOfList, filmId);
   }
-}
 
-export default function addFilmToUserList(storageSelector, filmId) {
-  storeIdFunction(storageSelector, filmId);
-  const nmaeOfListMirror = storageSelector === 'wached' ? 'queue' : 'wached';
-  storeIdFunction(nmaeOfListMirror, filmId);
+  const nmaeOfListMirror = nmaeOfList === 'wached' ? 'queue' : 'wached';
+  const queryMirrorListData = localStorage.getItem(nmaeOfListMirror);
+  if (queryMirrorListData !== null) {
+    let queryMirrorList = queryMirrorListData.split(',');
+    if (queryMirrorList.includes(filmId)) {
+      queryMirrorList.splice(queryMirrorList.indexOf(filmId), 1);
+      localStorage.setItem(nmaeOfListMirror, queryMirrorList);
+    }
+  }
 }
