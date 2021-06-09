@@ -67,4 +67,4 @@ module.exports=require("./lib/axios");
 },{"./constants":"MuPq","axios":"dZBD"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/listsStorage"),require("./js/apiService"),require("./js/apiResultsExample");
 },{"./sass/main.scss":"clu1","./js/listsStorage":"hxdC","./js/apiService":"eQwa","./js/apiResultsExample":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-film/src.b9ac8988.js.map
+//# sourceMappingURL=/dream-film/src.d7fd27c5.js.map
