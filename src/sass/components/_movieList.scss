@@ -1,7 +1,7 @@
 .container.movie__card {
   display: grid;
   @media screen and (min-width: 320px) {
-    // padding-top: 20px;
+    
     padding-bottom: 40px;
   }
   @media screen and (min-width: 768px) {
@@ -10,7 +10,7 @@
 
   //   background-color: rebeccapurple;
   @media screen and (min-width: 1024px) {
-    // padding-top: 60px;
+ 
     padding-bottom: 50px;
   }
 }
