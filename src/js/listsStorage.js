@@ -1,17 +1,26 @@
-function addFilmToUserList(nmaeOfList, filmId) {
-  const queryList = localStorage.getItem(nmaeOfList).split(',');
-
-  const nmaeOfListMirror = nmaeOfList === 'wached' ? 'queue' : 'wached';
-  const queryListMirror = localStorage.getItem(nmaeOfListMirror).split(',');
-  if (queryListMirror.includes(filmId)) {
-    queryListMirror.splice(queryListMirror.indexOf(filmId), 1);
-    localStorage.setItem(nmaeOfListMirror, queryListMirror);
-  }
-
-  if (queryList.includes(filmId)) {
-    return;
+function storeIdFunction(nmaeOfList, filmId) {
+  const queryListData = localStorage.getItem(nmaeOfList);
+  if (queryListData !== null) {
+    let queryList = queryListData.split(',');
+    console.log(queryList);
+    if (queryList.includes(filmId)) {
+      queryList.splice(queryList.indexOf(filmId), 1);
+      localStorage.setItem(nmaeOfList, queryList);
+    } else {
+      queryList.push(filmId);
+      localStorage.setItem(nmaeOfList, queryList);
+    }
+    if (queryList[0] === '') {
+      queryList.splice(0, 1);
+      localStorage.setItem(nmaeOfList, queryList);
+    }
   } else {
-    queryList.push(filmId);
-    localStorage.setItem(nmaeOfList, queryList);
+    localStorage.setItem(nmaeOfList, filmId);
   }
+}
+
+export default function addFilmToUserList(storageSelector, filmId) {
+  storeIdFunction(storageSelector, filmId);
+  const nmaeOfListMirror = storageSelector === 'wached' ? 'queue' : 'wached';
+  storeIdFunction(nmaeOfListMirror, filmId);
 }
