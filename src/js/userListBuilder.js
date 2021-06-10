@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+import movieListTPL from '../templates/library.hbs';
 import { BASE_URL, API_KEY } from './constants';
 
 export default async function getFilms(nameList) {
+  const movieListRef = document.querySelector('.movie__list');
   const userListStorage = localStorage.getItem(nameList);
   if (userListStorage !== null) {
     if (userListStorage) {
@@ -10,11 +12,11 @@ export default async function getFilms(nameList) {
       userListMovies.forEach(async filmId => {
         try {
           const film = await axios(`${BASE_URL}movie/${filmId}?api_key=${API_KEY}&language=ru-RU`);
-          console.log(film.data);
+          movieListRef.insertAdjacentHTML('beforeend', movieListTPL(film.data));
         } catch {
           err => console.log(err);
         }
       });
-    } else return;
+    }
   }
 }
