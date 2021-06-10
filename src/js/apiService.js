@@ -26,6 +26,11 @@ export default class MoviesApi {
         const { results, total_pages, page, total_results } = data;
             return { results, total_pages, page, total_results };
     }
+
+    async getGenre() {
+    return await axios.get(`/genre/movie/list?api_key=${this.key}`);
+  }
+
     incrementPage() {
         this.page += 1;
     }

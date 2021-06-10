@@ -12,4 +12,3 @@ export default function renderMainPage() {
 function renderTrends(films) {
     refs.movieSection.innerHTML = movieList(films.results);    
 }
-
