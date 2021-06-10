@@ -18,18 +18,19 @@
   <header class="header header__background-home">
     <div class="container header">
       <div class="site-logo">
-        <div class="logo__container" aria-label="Логотип сайту">
+        <nav class="nav">
+        <div class="logo__container">
     
             <a class="logo__link" href="./index.html">
                 <img class="icon-film" src="./images/svg/logo.svg" alt="Filmoteka" width="24" height="24">
-                <span class="site-logo__txt link">Filmoteka</span>
-            <a>
+                <span class="site-logo__txt">Filmoteka</span>
+            </a>
         </div>
     
             <ul class="nav__list">
                <li class="nav__list-item">
                    <a class="nav__list-link link nav-link-home current" href="">HOME</a>
-                </li>
+               </li>
                <li class="nav__list-item">
                    <a class="nav__list-link link nav-link-library" href="">MY LIBRARY</a>
                 </li>
@@ -62,6 +63,7 @@
           <button type="button" class="menu__btn button-queue" id="js-queue">QUEUE</button>
         </div>
       </div>
+    </div>
   </header>
 
   <main class="main">
@@ -69,6 +71,22 @@
       <ul class="movie__list"></ul>
     </section>
   </main>
+
+  <footer>
+    <div class="container footer">
+      <p class="footer-text">
+        <span>&#169;</span>
+        2021 &#124; All Rights Reserved &#124; Developed with
+
+          <svg class="footer-social__icon" width="14" height="12.88">
+            <use href="./images/svg/symbol-defs.svg#icon-favorite"></use>
+          </svg>
+
+        by
+        <a class="students-link" href="">GoIT Students</a>
+      </p>
+    </div>
+  </footer>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
