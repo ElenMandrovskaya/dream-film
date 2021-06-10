@@ -18,5 +18,3 @@ export default async function getFilms(nameList) {
     } else return;
   }
 }
-
-getFilms('wached');
