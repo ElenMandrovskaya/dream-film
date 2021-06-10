@@ -1,7 +1,8 @@
 import MoviesApi from './apiService';
-import movieList from '../templates/movieList.hbs'
+import movieList from '../templates/movieList.hbs';
+import getRefs from './getRefs';
 
-const movieListRef = document.querySelector('.movie__list');
+const refs = getRefs();
 const movies = new MoviesApi();
 
 export default function renderMainPage() {
@@ -9,6 +10,6 @@ export default function renderMainPage() {
 }
 
 function renderTrends(films) {
-    movieListRef.innerHTML =  movieList(films.results);    
+    refs.movieSection.innerHTML = movieList(films.results);    
 }
 
