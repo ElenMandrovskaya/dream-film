@@ -12,7 +12,7 @@ export default [
     work:'',
   },
   {
-    photo: '../images/photo/swetlana.jpg',
+    photo: './images/photo/swetlana.jpg',
     name: 'Светлана Лазарева',
     position: 'developer',
     work:'',
