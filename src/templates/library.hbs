@@ -1,0 +1,17 @@
+{{#this}}
+  <li class='movie__card'>
+    <div class='movie__link'>
+      <img
+        class='movie__img'
+        data-id={{id}}
+        src='https://image.tmdb.org/t/p/original/{{poster_path}}'
+        alt='{{title}} {{name}}'
+        onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/d/d6/Image_coming_soon.png';"
+      />
+    </div>
+    <h2 class='library__item-title'>{{original_title}}</h2>
+    {{#each this.genres}}<p class='library__item-genre'>{{name}}</p>{{/each}}
+    <p class='library__item-year'>{{release_date}}</p>
+    <p class='library__item-vote'>{{vote_average}}</p>
+  </li>
+{{/this}}
