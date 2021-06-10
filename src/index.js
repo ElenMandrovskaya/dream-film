@@ -1,5 +1,6 @@
 import './sass/main.scss';
-
+import './js/keyWordSearch';
+import './js/footerStudents'; 
 import './js/apiService';
 import './js/apiResultsExample';
 import './js/userListBuilder';
