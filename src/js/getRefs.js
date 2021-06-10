@@ -5,7 +5,9 @@ export default
         queueBtn: document.querySelector('.button-queue'),
         searcForm: document.querySelector('.search-form'),
         movieList: document.querySelector('.section'),
-        // : document.querySelector(''),
         warning: document.querySelector('.warning'),
-    }
+        myLibrary: document.querySelector('.nav-link-library'),
+        movieSection: document.querySelector('.movie__list'),
+  };
 }
+
