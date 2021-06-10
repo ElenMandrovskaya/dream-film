@@ -1,0 +1,41 @@
+.header__background-home {
+    height: 230px;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-image: var(--main-linear-gradient),
+      url(../images/header/main/mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: var(--main-linear-gradient),
+        url(../images/header/main/mobile@2x.jpg);
+    }
+  
+    @media screen and (min-width: 768px) {
+      background-image: var(--main-linear-gradient),
+        url(../images/header/main/tablet.jpg);
+  
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: var(--main-linear-gradient),
+          url(../images/header/main/tablet@2x.jpg);
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+        background-image: var(--main-linear-gradient),
+          url(../images/header/main/desktop.jpg);
+    
+        @media screen and (min-device-pixel-ratio: 2),
+          screen and (min-resolution: 192dpi),
+          screen and (min-resolution: 2dppx) {
+          background-image: var(--main-linear-gradient),
+            url(../images/header/main/desktop@2x.jpg);
+        }
+      }
+    }
+
