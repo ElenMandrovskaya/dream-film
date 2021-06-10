@@ -6,5 +6,6 @@ export default
         searcForm: document.querySelector('.search-form'),
         movieList: document.querySelector('.section'),
         // : document.querySelector(''),
+        warning: document.querySelector('.warning'),
     }
 }
