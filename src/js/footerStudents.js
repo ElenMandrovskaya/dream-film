@@ -11,7 +11,7 @@ import 'basiclightbox/dist/basicLightbox.min.css'
 // const refs = getRefs();
 
 const refs = {
-  studentsList: document.querySelector('.students'),
+  studentsList: document.querySelector('.students-link'),
 };
 console.log(students)
 
