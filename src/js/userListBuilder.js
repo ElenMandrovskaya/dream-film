@@ -3,9 +3,6 @@ import axios from 'axios';
 import movieListTPL from '../templates/library.hbs';
 import { BASE_URL, API_KEY } from './constants';
 
-localStorage.setItem('wached', [337404, 637649, 632357]);
-localStorage.setItem('queue', [567189, 578701, 615457]);
-
 export default async function getFilms(nameList) {
   const movieListRef = document.querySelector('.movie__list');
   const userListStorage = localStorage.getItem(nameList);
