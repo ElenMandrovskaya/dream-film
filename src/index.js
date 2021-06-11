@@ -8,5 +8,6 @@ import './js/renderMainPage';
 import './js/openLibrary';
 import MoviesApi from './js/apiService';
 import renderMainPage from './js/renderMainPage';
+import './js/pagination'
 
 renderMainPage();
