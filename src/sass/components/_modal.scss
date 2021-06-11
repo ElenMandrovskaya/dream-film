@@ -1,0 +1,258 @@
+.modal-close-btn {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: -30px;
+    left: 0;
+    border: none;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    background-color: var(--accent-color);
+    background-color: var(--accent-color);
+  }
+}
+
+.modal-card {
+  position: relative;
+  margin-top: 100px;
+  justify-content: space-between;
+  background-color: #ffffff;
+  min-height: 958px;
+  width: 280px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+    min-height: 562px;
+    width: 618px;
+    display: flex;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 882px;
+    min-height: 568px;
+    margin-top: 100px;
+    display: flex;
+  }
+}
+
+.image {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  margin: 48px 20px 30px;
+  width: 240px;
+  height: 356px;
+  margin-top: 300px;
+
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 373px;
+    margin-top: 35px;
+    margin-left: 28px;
+    position: absolute;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 300px;
+    height: 450px;
+    margin-top: 50px;
+    margin-left: 30px;
+    position: absolute;
+  }
+}
+
+.cardItem__wrapper {
+  width: 240px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    padding: 35px 30px;
+    width: 324px;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 50px 30px;
+    width: 550px;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cardItem__genreList {
+    width: 290px;
+  }
+}
+
+.genres {
+  display: flex;
+}
+
+.cardItem__name {
+  font-family: var(--primary-font-family);
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    line-height: 1.16;
+  }
+}
+
+.cardItem__wrapper p {
+  font-family: var(--primary-font-family);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.333;
+
+  letter-spacing: 0.05em;
+}
+
+.cardItem_text {
+  color: #8d8d8d;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cardItem__vote_average {
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 3px;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5;
+  padding: 1px 9px 1px 10px;
+}
+
+.cardItem__vote_count {
+  display: inline-block;
+  margin-left: 3px;
+  font-weight: 500;
+  color: #000;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 1px 4px 1px 4px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cardItem___data {
+  margin-left: 63px;
+  color: #000;
+  font-weight: 500;
+}
+
+.cardItem__title_data {
+  text-transform: uppercase;
+  margin-left: 47px;
+  color: #000;
+  font-weight: 500;
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-left: 70px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    margin-left: 46px;
+  }
+}
+
+.cardItem__genre {
+  display: inline-block;
+  margin-right: 90px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-right: 90px;
+  }
+}
+
+.cardItem__genre_data {
+  color: #000;
+  margin-right: 5px;
+}
+
+.cardItem__genreList {
+  list-style: disc;
+  display: block;
+  flex-wrap: wrap;
+  list-style: disc;
+}
+
+.cardItem__about {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.cardItem__description {
+  font-size: 12px;
+  color: #000;
+  line-height: 1.66;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+
+.cardItem__list {
+  list-style: none;
+}
+
+.storage {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.storage__item:first-child {
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+  }
+}
+
+.storage__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+
+  width: 106px;
+  height: 44px;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  border: 1px solid #000;
+  border-radius: 5px;
+
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
+}
+
+.storage__input:checked ~ .storage__btn {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: #fff;
+}
+
+.storage__input ~ .storage__btn {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
