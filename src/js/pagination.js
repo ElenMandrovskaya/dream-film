@@ -1,6 +1,8 @@
 import MoviesApi from './apiService';
+import renderMainPage from './renderMainPage';
+import getRefs from './getRefs';
 
-const moviesApi = new MoviesApi();
+const movies = new MoviesApi();
 
 let pagination = {
         startPage: 1,
@@ -24,11 +26,19 @@ const nextBtn = document.querySelector('.next-button');
     function next() {
         pagination.currentPage = (pagination.currentPage >= pagination.totalPages) ? pagination.startPage : pagination.currentPage + 1;
         info();
+
+        movies.selectPage(pagination.currentPage);
+        refs.movieSection.innerHTML = '';
+        movies.getTrendingMovies().then(response => renderMainPage(response.results));
     }
 
     function prev() {
         pagination.currentPage = (pagination.currentPage <= 1) ? pagination.totalPages : pagination.currentPage - 1;
         info();
+
+        movies.selectPage(pagination.currentPage);
+        refs.movieSection.innerHTML = '';
+        movies.getTrendingMovies().then(response => renderMainPage(response.results));
     }
 
     function info() {
@@ -132,10 +142,29 @@ const nextBtn = document.querySelector('.next-button');
         function onClickBtn(e) {
         pagination.currentPage = +e.target.textContent;
             info();
-            console.log(+e.target.textContent);
         }
-    }
+}
 
-moviesApi.getTrendingMovies().then(response => response.total_pages).then(getTotalPage);
+const refs = getRefs();
+
+const pageList = document.getElementById('pagesList');
+pageList.addEventListener('click', onClick);
+
+function onClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+    movies.selectPage(+e.target.textContent);
+    refs.movieSection.innerHTML = '';
+    movies.getTrendingMovies().then(response => renderMainPage(response.results));
+}
+
+// movies.getTrendingMovies().then(response => response.total_pages).then(getTotalPage);
+
+movies.getTrendingMovies().then(response => {
+    renderMainPage(response.results);
+    getTotalPage(response.total_pages);
+})
 
 document.addEventListener('DOMContentLoaded', setPageList, false);
