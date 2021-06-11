@@ -27,7 +27,7 @@ const nextBtn = document.querySelector('.next-button');
         pagination.currentPage = (pagination.currentPage >= pagination.totalPages) ? pagination.startPage : pagination.currentPage + 1;
         info();
 
-        movies.incrementPage();
+        movies.selectPage(pagination.currentPage);
         refs.movieSection.innerHTML = '';
         movies.getTrendingMovies().then(response => renderMainPage(response.results));
     }
@@ -36,7 +36,7 @@ const nextBtn = document.querySelector('.next-button');
         pagination.currentPage = (pagination.currentPage <= 1) ? pagination.totalPages : pagination.currentPage - 1;
         info();
 
-        movies.decrementPage();
+        movies.selectPage(pagination.currentPage);
         refs.movieSection.innerHTML = '';
         movies.getTrendingMovies().then(response => renderMainPage(response.results));
     }
@@ -160,6 +160,11 @@ function onClick(e) {
     movies.getTrendingMovies().then(response => renderMainPage(response.results));
 }
 
-movies.getTrendingMovies().then(response => response.total_pages).then(getTotalPage);
+// movies.getTrendingMovies().then(response => response.total_pages).then(getTotalPage);
+
+movies.getTrendingMovies().then(response => {
+    renderMainPage(response.results);
+    getTotalPage(response.total_pages);
+})
 
 document.addEventListener('DOMContentLoaded', setPageList, false);
