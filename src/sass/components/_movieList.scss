@@ -38,3 +38,29 @@
 
   //   padding: 20px;
 }
+.movie__text{
+display: grid;
+grid-template-columns: 1fr 10fr 1fr;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+/* or 133% */
+
+
+color: #FF6B08;
+}
+.movie__title{
+  
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+/* or 133% */
+text-transform:uppercase;
+
+color: #000000;
+}
