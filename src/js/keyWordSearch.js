@@ -24,7 +24,6 @@ function onSearch(e) {
     moviesApi.getMovies(searchQuery).then(renderMovies);
 }
 
-
 function renderMovies(movies) {
     if (movies.total_results === 0) {
         refs.warning.classList.remove('is-hidden'); 
@@ -33,22 +32,3 @@ function renderMovies(movies) {
     refs.warning.classList.add('is-hidden'); 
     refs.movieSection.innerHTML = movieListTpl(movies.results);
  }
-   
-    //     // console.log(searchQuery);
-    // if (searchQuery >= 1) {
-        // refs.warning.classList.add('hidden'); 
-    // // spinner.show();
-
-    // refs.movieSection.innerHTML = movieListTpl(movies.results);
-    // return;
-    // }
-    if (movies.total_results === 0) {
-        refs.warning.classList.remove('is-hidden'); 
-        return;   
-    };
-    refs.warning.classList.add('is-hidden'); 
-    refs.movieSection.innerHTML = movieListTpl(movies.results);
- }
-
- 
- 
