@@ -1,10 +1,4 @@
-import MoviesApi from './apiService';
-import renderMainPage from './renderMainPage';
-import getRefs from './getRefs';
-
-const movies = new MoviesApi();
-
-let pagination = {
+export const pagination = {
         startPage: 1,
         totalPages: 20,
         currentPage: 1,
@@ -14,43 +8,29 @@ let pagination = {
         startDotFlag: false,
         endDotFlag: true,
         pushFirstElement: true,
-        pushLastElement: true
-    };
+        pushLastElement: true,
+};
 
-const prevBtn = document.querySelector('.preview-button');
-const nextBtn = document.querySelector('.next-button');
+export function next() {
+    pagination.currentPage = (pagination.currentPage >= pagination.totalPages) ? pagination.startPage : pagination.currentPage+1;
+    info();
+}
 
-    prevBtn.addEventListener('click', prev);
-    nextBtn.addEventListener('click', next);
+export function prev() {
+    pagination.currentPage = (pagination.currentPage <= 1) ? pagination.totalPages : pagination.currentPage - 1;
+    info();
+}
 
-    function next() {
-        pagination.currentPage = (pagination.currentPage >= pagination.totalPages) ? pagination.startPage : pagination.currentPage + 1;
-        info();
-
-        movies.selectPage(pagination.currentPage);
-        refs.movieSection.innerHTML = '';
-        movies.getTrendingMovies().then(response => renderMainPage(response.results));
-    }
-
-    function prev() {
-        pagination.currentPage = (pagination.currentPage <= 1) ? pagination.totalPages : pagination.currentPage - 1;
-        info();
-
-        movies.selectPage(pagination.currentPage);
-        refs.movieSection.innerHTML = '';
-        movies.getTrendingMovies().then(response => renderMainPage(response.results));
-    }
-
-    function info() {
+export function info() {
         setPageList();
     }
 
-    function getTotalPage(pageNum) {
+export function getTotalPage(pageNum) {
         pagination.totalPages = pageNum;
     info();
     }
 
-    function drawPages() {
+export function drawPages() {
         let pages = [];
         if (pagination.pushFirstElement)
             pages.push(pagination.startPage);
@@ -69,7 +49,7 @@ const nextBtn = document.querySelector('.next-button');
         return pages;
     }
 
-    function setPages() {
+export function setPages() {
         if ((pagination.frame + 2) <= pagination.totalPages) {
             if (pagination.currentPage === pagination.startPage) {
                 pagination.pushFirstElement = false;
@@ -116,8 +96,8 @@ const nextBtn = document.querySelector('.next-button');
         return drawPages();
     }
 
-    function setPageList() {
-        let menu = setPages();
+export function setPageList() {
+    let menu = setPages();
 
         let menuLi = menu.map((item) => {
             let menuLiItem = String(item);
@@ -139,32 +119,8 @@ const nextBtn = document.querySelector('.next-button');
 
         elemList.addEventListener('click', onClickBtn);
 
-        function onClickBtn(e) {
-        pagination.currentPage = +e.target.textContent;
+        function onClickBtn(e) {        
+            pagination.currentPage = +e.target.textContent;
             info();
         }
-}
-
-const refs = getRefs();
-
-const pageList = document.getElementById('pagesList');
-pageList.addEventListener('click', onClick);
-
-function onClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-
-    movies.selectPage(+e.target.textContent);
-    refs.movieSection.innerHTML = '';
-    movies.getTrendingMovies().then(response => renderMainPage(response.results));
-}
-
-// movies.getTrendingMovies().then(response => response.total_pages).then(getTotalPage);
-
-movies.getTrendingMovies().then(response => {
-    renderMainPage(response.results);
-    getTotalPage(response.total_pages);
-})
-
-document.addEventListener('DOMContentLoaded', setPageList, false);
+    }
