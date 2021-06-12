@@ -28,7 +28,6 @@ function onSearch(e) {
     moviesApi.getMovies(searchQuery).then(renderMovies);
 }
 
-
 function renderMovies(movies) {
     // if (searchQuery === ' ') {
     //     refs.warning.classList.remove('hidden'); 
