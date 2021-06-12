@@ -11,4 +11,5 @@ import './js/modalFilmCard';
 // import renderMainPage from './js/renderMainPage';
 import './js/pagination'
 
+
 // renderMainPage();
