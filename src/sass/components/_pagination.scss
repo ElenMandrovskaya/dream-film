@@ -1,13 +1,27 @@
 .container.pagination {
   display: flex;
   justify-content: center;
-  padding: 60px 0;
+  padding-bottom: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @media screen and (min-width: 320px) {
+    width: 280px;
+  }
 }
 
 .pagination-list {
   display: flex;
 }
 
+li:nth-last-child(-n + 2) {
+  display: none;
+}
+
 #pagesList {
   margin: 0 16px;
+
+  @media screen and (min-width: 320px) {
+    width: 200px;
+  }
 }
