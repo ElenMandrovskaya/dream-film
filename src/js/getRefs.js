@@ -13,6 +13,12 @@ export default
       nextBtn: document.querySelector('.next-button'),
       pageList: document.getElementById('pagesList'),
       studentsList: document.querySelector('.students-link'),
+      homeLink: document.querySelector('.nav-link-home'),
+      logoLink: document.querySelector('.logo__link'),
+      menuControls: document.querySelector('.menu-controls'),
+      menuSearch: document.querySelector('.menu-search'),
+      header: document.querySelector('.header'),
+
   };
 }
 

@@ -11,6 +11,7 @@ li {
   justify-content: space-between;
   margin: 0 auto;
   background-image: var(--main-linear-gradient), url(../images/header/main/mobile.jpg);
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -49,6 +50,7 @@ li {
   border: 1px solid #000000;
 
   background-image: var(--main-linear-gradient), url(../images/header/library/mobile.jpg);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -64,7 +66,7 @@ li {
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
-      background-image: var(--main-linear-gradient), url(../images/header/main/tablet@2x.jpg);
+      background-image: var(--main-linear-gradient), url(../images/header/library/tablet@2x.jpg);
     }
   }
 
