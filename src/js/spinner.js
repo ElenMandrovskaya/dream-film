@@ -25,10 +25,10 @@ class Spinner {
     }
 
     show() {
-        
+        console.log('spinner show');
     }
 
     hide() {
-
+        console.log('spinner hide');
     }
 }
