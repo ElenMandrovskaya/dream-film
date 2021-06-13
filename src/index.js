@@ -4,7 +4,7 @@ import './js/footerStudents';
 import './js/apiService';
 import './js/apiResultsExample';
 import './js/userListBuilder';
-// import './js/renderMainPage';
+import './js/renderMainPage';
 import './js/openLibrary';
 import './js/modalFilmCard';
 // import MoviesApi from './js/apiService';
