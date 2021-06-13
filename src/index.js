@@ -10,6 +10,6 @@ import './js/modalFilmCard';
 // import MoviesApi from './js/apiService';
 // import renderMainPage from './js/renderMainPage';
 import './js/pagination'
-
+import './js/switchHeader'
 
 // renderMainPage();
