@@ -105,10 +105,10 @@ export function setPageList() {
                 menuLiItem = '<button disabled class="pagination-list__item dot">' + menuLiItem + '</button>';
             }
             else if (menuLiItem.substring(0, 2) === '->') {
-                menuLiItem = '<li><button disabled class="pagination-list__item active">' + menuLiItem.substr(2) + '</button></li>';
+                menuLiItem = '<li class="item"><button disabled class="pagination-list__item active">' + menuLiItem.substr(2) + '</button></li>';
             }
             else {
-                menuLiItem = '<li><button class="pagination-list__item">' + menuLiItem + '</button></li>';
+                menuLiItem = '<li class="item"><button class="pagination-list__item">' + menuLiItem + '</button></li>';
             }
     
             return menuLiItem;
