@@ -64,7 +64,7 @@ function onSearch(e) {
     
     moviesApi.searchQuery = e.currentTarget.elements.query.value.trim();
     if (!moviesApi.searchQuery) {
-        return
+      return;
     }
     
     refs.movieSection.innerHTML = '';
@@ -79,7 +79,8 @@ function onSearch(e) {
 
 function renderMovies(movies) {
     if (movies.total_results === 0) {
-        refs.warning.classList.remove('is-hidden'); 
+      refs.warning.classList.remove('is-hidden');
+      refs.navBtn.classList.add('is-hidden');
         return;   
     };
     refs.warning.classList.add('is-hidden'); 
