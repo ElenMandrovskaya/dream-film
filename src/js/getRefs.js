@@ -8,6 +8,11 @@ export default
         warning: document.querySelector('.warning'),
         myLibrary: document.querySelector('.nav-link-library'),
         movieSection: document.querySelector('.movie__list'),
+        homeLink: document.querySelector('.nav-link-home'),
+        logoLink: document.querySelector('.logo__link'),
+        menuControls: document.querySelector('.menu-controls'),
+        menuSearch: document.querySelector('.menu-search'),
+        header: document.querySelector('.header'),
   };
 }
 
