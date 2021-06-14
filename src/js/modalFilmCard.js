@@ -1,5 +1,8 @@
 import modalFilmCard from '../templates/modal.hbs';
 
+import listStorege from './listsStorage';
+import checkButtonsActive from './buttonsChecker';
+
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
@@ -48,7 +51,21 @@ function openModal(e) {
         window.removeEventListener('keydown', closeModalHandler);
       }
 
-      //initStorageBtns();
+      const addToWachedBtn = document.querySelector(".storage");
+      const filmId = e.target.dataset.id;
+
+      checkButtonsActive(filmId);
+
+      addToWachedBtn.addEventListener("click", (event) => {
+        if (event.target.id === "js-watched") {
+          const filmId = event.target.dataset.filmId;
+          listStorege("watched", filmId);
+        }
+        if (event.target.id === "js-queue") {
+          const filmId = event.target.dataset.filmId;
+          listStorege("queue", filmId);
+        }
+      });
     })
     .then(data => {})
     .catch(error => {
