@@ -69,7 +69,7 @@ export default class MoviesApi {
                 genresArray = genresArray.slice(0, 2);
   }
             genreId.genre_ids = genresArray;
-            console.log(genresArray)
+            // console.log(genresArray)
         });
         const { results, total_pages, page, total_results } = data;
             return { results, total_pages, page, total_results };
