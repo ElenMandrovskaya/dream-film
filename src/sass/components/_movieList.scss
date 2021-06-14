@@ -16,17 +16,20 @@
 }
 .movie__list {
   display: grid;
+  
   @media screen and (min-width: 320px) {
     grid-template-columns: 280px;
     grid-gap: 20px;
     justify-content: center;
     justify-items: center;
+    
   }
   @media screen and (min-width: 768px) {
     grid-template-columns: 294px 294px;
     grid-gap: 30px;
     justify-content: center;
     justify-items: center;
+    
   }
   //   grid-template-rows: 1fr 1fr 1fr;
   @media screen and (min-width: 1024px) {
@@ -39,11 +42,13 @@
   //   padding: 20px;
 }
 .movie__text {
-  display: grid;
-  grid-template-columns: 5fr 1fr 3fr;
+  display: flex;
+justify-content: start;
+// margin-right: 5px;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
   // text-align: center;
   // justify-content: center;
-  justify-items: left;
+  // justify-items: left;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -53,6 +58,7 @@
   // padding: 1px 10px;
 
   color: #ff6b08;
+  
 }
 .movie__title {
   font-family: Roboto;
@@ -66,6 +72,9 @@
   color: #000000;
 
   margin-bottom: 5px;
+}
+.movie__release_date{
+  margin-right: 10px;
 }
 .movie__vote_average {
   background-color: #ff6b08;
@@ -83,10 +92,14 @@
 .movie__el {
   padding: 2px;
   position: relative;
+  border-radius: 5px;
+    transition: all 500ms;
+    transition-delay: 0.2s;
 }
 .movie__el:hover {
-  transform: scale(1.05);
-  transition: all 400ms;
+  transform: scale(1.1);
+  // transition: all 1000ms;
+  
   border-radius: 5px;
   background: linear-gradient(
     60deg,
@@ -99,9 +112,9 @@
     #07b39b,
     #6fba82
   );
-  box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+  box-shadow: 20px -5px rgb(0 0 0 / 20%);
 
-  animation: animatedgradient 10s ease;
+  // animation: animatedgradient 10s ease;
 }
 .btn-id {
   position: absolute;
@@ -115,16 +128,40 @@
   line-height: 1.33;
 }
 .btn__trailer {
-  background-color: rgb(218, 221, 250);
+  background: linear-gradient(
+    5deg,
+    #d6c9bd,
+    #9fc98e,
+    #dda3b4,
+    #d9c1dd,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );;
   border-radius: 5px;
+  border: none;
+  cursor: alias;
+}
+.btn__trailer-icon{
+  display: inline-flex;
+  border-radius: 5px;
+  background-color: #ff6b08;
+  padding: 0px 4px;
+  
+
 }
 .movie__genres_list {
+  display: flex;
+
   position: relative;
 }
 .movie__genres {
+  display: block; 
+    white-space: nowrap; 
   margin-right: 5px;
 }
 .movie__genres:not(:last-child)::after {
   content: ',';
-  position: absolute;
+  // position: absolute;
 }

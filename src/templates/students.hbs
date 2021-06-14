@@ -1,11 +1,19 @@
-<div class="modal modal-students">
+<div class="modal modal-students container">
   <ul class="students-list">
     {{#each this}}
     <li class="student">
-      <img src="{{photo}}" alt="{{name}}" width="100" height="150">
-      <p class="student-name">{{name}}</p>
-      <p class="student-position">{{position}}</p>
-      <p class="student-work">{{work}}</p>
+      <img class="student-photo" src="{{photo}}" alt="{{name}}" width="100" height="133">
+      <div class="student-desc">
+        <p class="student-name">{{name}}</p>
+        <div class="student-position-wrapper">
+          <p class="student-position">{{position}}</p>
+          <a class="student-gh-link" href="{{ghLink}}" target="_blank">
+          <img src="https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=5eb3de&/free-icon-github-logo-25231.png"
+            alt="gitHub">
+          </a>
+        </div>
+        <p class="student-work"><span class="student-work-about">Работал(-а) над:</span>&#10148 {{work}}</p>
+      </div>
     </li>
     {{/each}}
   </ul>

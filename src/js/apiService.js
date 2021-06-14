@@ -39,6 +39,8 @@ export default class MoviesApi {
         data.results.map(obj => {
             const releaseYear = obj.release_date.slice(0, 4);
             obj.release_date = releaseYear;
+            obj.vote_average = String(obj.vote_average).padEnd(3, '.0');
+            // console.log(obj.vote_average);
         });
         data.results.map(genreId => {
             let genresArray = genreId.genre_ids.map(id => genresList.filter(el => el.id === id)).flat();
@@ -59,6 +61,7 @@ export default class MoviesApi {
         data.results.map(obj => {
             const releaseYear = obj.release_date.slice(0, 4);
             obj.release_date = releaseYear;
+            obj.vote_average = String(obj.vote_average).padEnd(3, '.0');
         });
         data.results.map(genreId => {
             let genresArray = genreId.genre_ids.map(id => genresList.filter(el => el.id === id)).flat();

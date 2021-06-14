@@ -8,9 +8,9 @@
 // // async function genreArray(e){
 // //     const genre = await moviesApi.getTrendingMoviesWithGenre();
 // //     // const obj = genre.map(genres => genres)
-// //     console.log(genre)
+// //     // console.log(genre)
 // // }
 
-// moviesApi.getTrendingMoviesWithGenre()    
+// moviesApi.getMoviesWithGenre()()    
 
 // // genreArray()
