@@ -3,8 +3,6 @@ import refs from './getRefs';
 
 const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
 
-// console.log(movieSection);
-
 const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
   movieSection.innerHTML = '';
   if (secondNameList === null) {
@@ -18,11 +16,11 @@ const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
 };
 
 myLibrary.addEventListener('click', event => {
-  buildList(userListBuilder, event, 'wached', 'queue');
+  buildList(userListBuilder, event, 'watched', 'queue');
 });
 
 watchedBtn.addEventListener('click', event => {
-  buildList(userListBuilder, event, 'wached');
+  buildList(userListBuilder, event, 'watched');
 });
 
 queueBtn.addEventListener('click', event => {
