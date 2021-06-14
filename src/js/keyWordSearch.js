@@ -96,7 +96,7 @@ function onClick(e) {
 
     moviesApi.selectPage(+e.target.textContent);
     refs.movieSection.innerHTML = '';
-    moviesApi.getMovies(searchQuery).then(renderMovies);
+    moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
 }
 
 document.addEventListener('DOMContentLoaded', setPageList, false);
