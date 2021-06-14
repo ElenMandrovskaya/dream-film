@@ -53,14 +53,14 @@ export default class MoviesApi {
     }
         async getMoviesWithGenre() {
         const data = await this.getMovies();
-        // console.log(data)
+        console.log(data)
         const genresList = await this.getGenresList();
         // console.log(genresList)
         data.results.map(obj => {
             const releaseYear = obj.release_date.slice(0, 4);
             obj.release_date = releaseYear;
-            console.log(obj.release_date)
-            // obj.vote_average = String(obj.vote_average).padEnd(3, '.0');
+            // console.log(obj.release_date)
+            // obj.vote_average = toString(obj.vote_average).padEnd(3, '.0');
 
         });
         data.results.map(genreId => {
@@ -69,7 +69,7 @@ export default class MoviesApi {
                 genresArray = genresArray.slice(0, 2);
   }
             genreId.genre_ids = genresArray;
-            // console.log(genresArray)
+            console.log(genresArray)
         });
         const { results, total_pages, page, total_results } = data;
             return { results, total_pages, page, total_results };
