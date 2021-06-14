@@ -2,15 +2,11 @@
 
 import students from './studentsInfo';
 import createStudents from '../templates/students.hbs';
-
+import getRefs from './getRefs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-// const refs = getRefs();
-
-const refs = {
-  studentsList: document.querySelector('.students-link'),
-};
+const refs = getRefs();
 
 refs.studentsList.addEventListener('click', e => {
   e.preventDefault();

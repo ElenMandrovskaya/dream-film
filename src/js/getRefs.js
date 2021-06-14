@@ -18,6 +18,7 @@ export default
       menuControls: document.querySelector('.menu-controls'),
       menuSearch: document.querySelector('.menu-search'),
       header: document.querySelector('.header'),
+      studentsList: document.querySelector('.students-link'),
 
   };
 }
