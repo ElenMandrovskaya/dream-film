@@ -105,4 +105,4 @@ var e,n=arguments[3];!function(t){"object"==typeof exports&&"undefined"!=typeof 
 },{"./getRefs":"qJUB"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/keyWordSearch"),require("./js/footerStudents"),require("./js/apiService"),require("./js/apiResultsExample"),require("./js/userListBuilder"),require("./js/renderMainPage"),require("./js/openLibrary"),require("./js/modalFilmCard"),require("./js/pagination"),require("./js/switchHeader"),require("./js/btnScrollTop");
 },{"./sass/main.scss":"clu1","./js/keyWordSearch":"gS0E","./js/footerStudents":"oVdJ","./js/apiService":"eQwa","./js/apiResultsExample":"jRvc","./js/userListBuilder":"klOU","./js/renderMainPage":"zrqp","./js/openLibrary":"kVM8","./js/modalFilmCard":"EMyq","./js/pagination":"o8lo","./js/switchHeader":"TMUY","./js/btnScrollTop":"AFsQ"}]},{},["Focm"], null)
-//# sourceMappingURL=/dream-film/src.963d4a97.js.map
+//# sourceMappingURL=/dream-film/src.90e7b291.js.map
