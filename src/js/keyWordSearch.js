@@ -52,7 +52,7 @@ function onClickNavBtn(e) {
     if (e.target.nodeName !== 'BUTTON') {
     moviesApi.selectPage(pagination.currentPage);
     refs.movieSection.innerHTML = '';
-    moviesApi.getMovies(searchQuery).then(renderMovies);
+    moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
   }
 }
 
@@ -71,7 +71,7 @@ function onSearch(e) {
     moviesApi.resetPage();
     refs.searchForm.reset();
     
-    moviesApi.getMovies(searchQuery).then(response => {
+    moviesApi.getMoviesWithGenre(searchQuery).then(response => {
         renderMovies(response);
         getTotalPage(response.total_pages)
     });

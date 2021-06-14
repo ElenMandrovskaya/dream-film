@@ -5,8 +5,12 @@
 
 // const moviesApi = new MoviesApi();
 
-// async function searchTrends(e){
-//     const movies = await moviesApi.getTrendingMovies();
-//     console.log(movies)
-// }
-// searchTrends()
+// // async function genreArray(e){
+// //     const genre = await moviesApi.getTrendingMoviesWithGenre();
+// //     // const obj = genre.map(genres => genres)
+// //     console.log(genre)
+// // }
+
+// moviesApi.getTrendingMoviesWithGenre()    
+
+// // genreArray()
