@@ -155,6 +155,7 @@ li {
 
   &__films {
     background-color: transparent;
+    width: 310px;
     border: none;
     outline: none;
     font-family: var(--primary-font-family);
@@ -167,7 +168,7 @@ li {
     color: var(--secondary-text-color);
 
     &::placeholder {
-      font-family: (--primary-font-family);
+      font-family: var(--primary-font-family);
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
