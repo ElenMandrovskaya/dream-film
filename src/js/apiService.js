@@ -10,13 +10,15 @@ export default class MoviesApi {
         this.searchQuery = '';
         this.page = 1;
     }
+
     async getMovies() {
-        const { data } = axios.get(
-            `/search/movie?api_key=${this.key}&query=${this.searchQuery}&language=en-US`,
+        const { data } = await axios.get(
+        `/search/movie?api_key=${this.key}&page=${this.page}&query=${this.searchQuery}`,
         );
          const { results, total_pages, page, total_results } = data;
-            return { results, total_pages, page, total_results };
+        return { results, total_pages, page, total_results };
     }
+
     async getTrendingMovies() {
         const { data } = await axios.get(
         `/trending/movie/week?api_key=${this.key}&page=${this.page}`,
@@ -24,6 +26,52 @@ export default class MoviesApi {
         const { results, total_pages, page, total_results } = data;
             return { results, total_pages, page, total_results };
     }
+    async getGenresList() {
+    const { data } = await axios.get(`/genre/movie/list?api_key=${this.key}`);
+    const { genres } = data;
+    return genres;
+    }
+    async getTrendingMoviesWithGenre() {
+        const data = await this.getTrendingMovies();
+        // console.log(data)
+        const genresList = await this.getGenresList();
+        // console.log(genresList)
+        data.results.map(obj => {
+            const releaseYear = obj.release_date.slice(0, 4);
+            obj.release_date = releaseYear;
+        });
+        data.results.map(genreId => {
+            let genresArray = genreId.genre_ids.map(id => genresList.filter(el => el.id === id)).flat();
+            if (genresArray.length > 3) {
+                genresArray = genresArray.slice(0, 2);
+  }
+            genreId.genre_ids = genresArray;
+            // console.log(genresArray)
+        });
+        const { results, total_pages, page, total_results } = data;
+            return { results, total_pages, page, total_results };
+    }
+        async getMoviesWithGenre() {
+        const data = await this.getMovies();
+        // console.log(data)
+        const genresList = await this.getGenresList();
+        // console.log(genresList)
+        data.results.map(obj => {
+            const releaseYear = obj.release_date.slice(0, 4);
+            obj.release_date = releaseYear;
+        });
+        data.results.map(genreId => {
+            let genresArray = genreId.genre_ids.map(id => genresList.filter(el => el.id === id)).flat();
+            if (genresArray.length > 3) {
+                genresArray = genresArray.slice(0, 2);
+  }
+            genreId.genre_ids = genresArray;
+            // console.log(genresArray)
+        });
+        const { results, total_pages, page, total_results } = data;
+            return { results, total_pages, page, total_results };
+  }
+
     incrementPage() {
         this.page += 1;
     }
