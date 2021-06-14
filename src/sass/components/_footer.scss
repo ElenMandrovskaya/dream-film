@@ -1,8 +1,10 @@
-.footer {
+footer {
   background-color: var(--footer-bg-color);
+}
+
+.footer {
   padding-top: 29px;
   padding-bottom: 29px;
-
   color: var(--footer-text-color);
 }
 
@@ -13,31 +15,99 @@
 }
 
 .modal-students {
-  background-color: azure;
+  background-color: var(--main-bg-color);
+  overflow: auto;
+  height: 100vh;
+  margin-top: 50px;
 }
 
 .students-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  max-width: calc(100% - 64px);
-  margin-left: auto;
-  margin-right: auto;
-  // grid-template-columns: 294px 294px;
-  // grid-gap: 30px;
-  // justify-content: center;
-  // justify-items: center;
-  // display: grid;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin: -8px;
 }
-// .student {
-//   // grid-template-columns: 294px 294px;
-//   // grid-gap: 30px;
-//   // justify-content: center;
-//   // justify-items: center;
-// }
+.student {
+  background-color: var(--footer-bg-color);
+  display: flex;
+  max-width: 420px;
+  margin: 8px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.student:hover {
+  transform: scale(1.05);
+  transition: all 400ms;
+  background: linear-gradient(
+    60deg,
+    #d6c9bd,
+    #9fc98e,
+    #dda3b4,
+    #d9c1dd,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+  animation: animatedgradient 10s ease;
+}
+
+.student-photo {
+  border: 1px solid var(--footer-bg-color);
+  border-radius: 20px;
+}
+
+.student-desc {
+  margin-left: 15px;
+  @media screen and (max-width: 767px) {
+    margin-left: 8px;
+  }
+}
+
+.student-name {
+  font-size: 20px;
+  margin-bottom: 3px;
+  padding-top: 5px;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.student-position {
+  color: var(--accent-color);
+  font-size: 14px;
+  margin-bottom: 5px;
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.student-position-wrapper {
+  display: flex;
+}
+
+.student-gh-link {
+  margin-left: 10px;
+}
+
+.student-work {
+  color: var(--footer-text-color);
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.student-work-about {
+  display: block;
+  color: var(--primary-text-color);
+  margin-bottom: 3px;
+}
 
 .students-link {
   text-decoration: underline;
