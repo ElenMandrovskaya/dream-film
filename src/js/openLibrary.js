@@ -3,7 +3,7 @@ import refs from './getRefs';
 
 const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
 
-console.log(movieSection);
+// console.log(movieSection);
 
 const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
   movieSection.innerHTML = '';

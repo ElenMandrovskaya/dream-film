@@ -4,7 +4,7 @@ export default [
     name: 'Елена Мандровская',
     position: 'Team Lead',
     ghLink: 'https://github.com/ElenMandrovskaya',
-    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении.',
+    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), класса и мотодов "MoviesApi',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=7834bf&/oleh.jpg',

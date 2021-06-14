@@ -53,12 +53,15 @@ export default class MoviesApi {
     }
         async getMoviesWithGenre() {
         const data = await this.getMovies();
-        // console.log(data)
+        console.log(data)
         const genresList = await this.getGenresList();
         // console.log(genresList)
         data.results.map(obj => {
             const releaseYear = obj.release_date.slice(0, 4);
             obj.release_date = releaseYear;
+            // console.log(obj.release_date)
+            // obj.vote_average = toString(obj.vote_average).padEnd(3, '.0');
+
         });
         data.results.map(genreId => {
             let genresArray = genreId.genre_ids.map(id => genresList.filter(el => el.id === id)).flat();
