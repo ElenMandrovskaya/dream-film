@@ -4,7 +4,7 @@ export default [
     name: 'Елена Мандровская',
     position: 'Team Lead',
     ghLink: 'https://github.com/ElenMandrovskaya',
-    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), класса и мотодов "MoviesApi',
+    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), класса и мотодов "MoviesApi", кнопка "ScrollUp".',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=7834bf&/oleh.jpg',
@@ -18,7 +18,7 @@ export default [
     name: 'Светлана Лазарева',
     position: 'Developer',
     ghLink: 'https://github.com/sweetlanas',
-    work:'Версткой футера. Модалкой с информацией о участниках нашей команды.',
+    work:'Версткой футера. Модалкой с информацией об участниках нашей команды.',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=672096&/katrin.jpg',
@@ -32,14 +32,14 @@ export default [
     name: 'Оксана Зеленевская',
     position: 'Developer',
     ghLink: 'https://github.com/OksanaZel',
-    work:' Версткой и подключением номера страниц (пагинация) на главной странице. Версткой контейнера страницы "My Library".',
+    work:' Версткой и подключением номера страниц (пагинация) на главной странице.',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=6d18b0&/inna.jpg',
     name: 'Инна Дмитренко',
     position: 'Developer',
     ghLink: 'https://github.com/inna-dmytrenko',
-    work:'Версткой контейнера главной страницы для правильного позиционирования карточек фильмов.',
+    work:'Версткой контейнера главной страницы для правильного позиционирования карточек фильмов. Кнопка трейлера.',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=613b0d&/suzanna.jpg',
@@ -53,14 +53,14 @@ export default [
     name: 'Дима Марьянченко',
     position: 'Developer',
     ghLink: 'https://github.com/dimamarjan',
-    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", "My Library" отрисовывается библиотека пользователя.',
+    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", Версткой контейнера страницы "My Library" и отрисовкой библиотеки пользователя. Отрисовкой фильмов "Watched" и "Queue" по нажатию на соответствующие кнопки.',
   },
    {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=e72968&/slava.jpg',
     name: 'Вячеслав Грач',
     position: 'Developer',
     ghLink: 'https://github.com/SlavaGrach',
-    work:' Версткой и поключением Loader для асинхронных запросов. Загрузкой популярных фильмов на главную страницу.',
+    work:' Версткой и поключением Loader для асинхронных запросов. Рендер популярных фильмов на главную страницу.',
   },
     {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=fcbd9d&/valentin.jpg',
