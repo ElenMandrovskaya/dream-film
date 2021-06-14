@@ -1,8 +1,12 @@
 import userListBuilder from './userListBuilder';
 import refs from './getRefs';
 
+const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
+
+console.log(movieSection);
+
 const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
-  refs().movieSection.innerHTML = '';
+  movieSection.innerHTML = '';
   if (secondNameList === null) {
     eve.preventDefault();
     builderFunction(nameList);
@@ -13,14 +17,14 @@ const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
   }
 };
 
-refs().myLibrary.addEventListener('click', event => {
+myLibrary.addEventListener('click', event => {
   buildList(userListBuilder, event, 'wached', 'queue');
 });
 
-refs().watchedBtn.addEventListener('click', event => {
+watchedBtn.addEventListener('click', event => {
   buildList(userListBuilder, event, 'wached');
 });
 
-refs().queueBtn.addEventListener('click', event => {
+queueBtn.addEventListener('click', event => {
   buildList(userListBuilder, event, 'queue');
 });
