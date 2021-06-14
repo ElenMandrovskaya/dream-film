@@ -6,7 +6,8 @@
     
     <button data-id='{{id}}' class="btn__trailer">
         
-            <h2 class="btn__trailer-text" data-id='{{id}}'>▶ Play the trailer</h2>
+            <h2 class="btn__trailer-text" data-id='{{id}}'> <div class="btn__trailer-icon">▶</div>
+                 Play the trailer</h2>
         
     </button>
 
@@ -21,7 +22,7 @@
         {{#each genre_ids}}
         <li class="movie__genres"> {{this.name}}
             {{/each}}
-        </li> </ul> | <span>{{release_date}}</span>
+        </li> </ul>|&nbsp;<span class="movie__release_date">{{release_date}}</span>
             <span class="movie__vote_average">{{vote_average}}</span>
     </div>
     </div>
