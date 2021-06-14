@@ -17,7 +17,7 @@ export default function storeIdFunction(nmaeOfList, filmId) {
     localStorage.setItem(nmaeOfList, filmId);
   }
 
-  const nmaeOfListMirror = nmaeOfList === 'wached' ? 'queue' : 'wached';
+  const nmaeOfListMirror = nmaeOfList === 'watched' ? 'queue' : 'watched';
   const queryMirrorListData = localStorage.getItem(nmaeOfListMirror);
   if (queryMirrorListData !== null) {
     let queryMirrorList = queryMirrorListData.split(',');
