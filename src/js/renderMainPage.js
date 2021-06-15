@@ -48,7 +48,11 @@ function onClickPrevBtn() {
 
     moviesApi.selectPage(pagination.currentPage);
     refs.movieSection.innerHTML = '';
-    moviesApi.getTrendingMoviesWithGenre().then(response => renderMoviesList(response.results));
+    spin.show();
+    moviesApi.getTrendingMoviesWithGenre().then(response => {
+        renderMoviesList(response.results);
+        spin.hide();
+    });
 }
 
 function onClickNextBtn() {
@@ -56,7 +60,11 @@ function onClickNextBtn() {
 
     moviesApi.selectPage(pagination.currentPage);
     refs.movieSection.innerHTML = '';
-    moviesApi.getTrendingMoviesWithGenre().then(response => renderMoviesList(response.results));
+    spin.show();
+    moviesApi.getTrendingMoviesWithGenre().then(response => {
+        renderMoviesList(response.results);
+        spin.hide();
+    });
 }
     
 refs.pageList.addEventListener('click', onClick);
@@ -68,7 +76,11 @@ function onClick(e) {
 
     moviesApi.selectPage(+e.target.textContent);
     refs.movieSection.innerHTML = '';
-    moviesApi.getTrendingMoviesWithGenre().then(response => renderMoviesList(response.results));
+    spin.show()
+    moviesApi.getTrendingMoviesWithGenre().then(response => {
+        renderMoviesList(response.results);
+        spin.hide();
+    });
 }
 
 function renderMoviesList(movies){
@@ -76,19 +88,11 @@ function renderMoviesList(movies){
     refs.movieSection.insertAdjacentHTML('beforeend', markup);
 };
 
-
-
-
+spin.show();
 moviesApi.getTrendingMoviesWithGenre().then(response => {
     getTotalPage(response.total_pages);
-
-    spin.show();
     renderMoviesList(response.results);
-    console.log('spin.hide');
     spin.hide();
 });
-
-// spin.hide();
-
 
 document.addEventListener('DOMContentLoaded', setPageList, false);

@@ -25,20 +25,21 @@ export default class Spin {
         };
         
         this.target = document.getElementById(id);
+
+        this.spinner = new Spinner(this.option);
        
-        this.spinner = new Spinner(this.option).spin(this.target);
+        // this.spinner = new Spinner(this.option).spin();
     }
 
     show() {
         console.log('spinner show');
-        // const target = document.getElementById('spinner-root');
-        // const spinner = new Spinner(this.option).spin(target);
+        console.log(this.target);
+        // this.target.appendChild(this.spinner.el);
         this.spinner.spin(this.target);
     }
 
     hide() {
         console.log('spinner hide');
         this.spinner.stop();
-
     }
 }

@@ -53,8 +53,10 @@ refs.navBtn.addEventListener('click', onClickNavBtn);
 function onClickNavBtn(e) {
     if (e.target.nodeName !== 'BUTTON') {
     moviesApi.selectPage(pagination.currentPage);
-    refs.movieSection.innerHTML = '';
-    moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
+      refs.movieSection.innerHTML = '';
+      spin.show()
+      moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
+      spin.hide();
   }
 }
 
@@ -73,12 +75,12 @@ function onSearch(e) {
     moviesApi.resetPage();
     refs.searchForm.reset();
     
-  // spin.show();
+  spin.show();
     moviesApi.getMoviesWithGenre(searchQuery).then(response => {
         renderMovies(response);
-        getTotalPage(response.total_pages)
+      getTotalPage(response.total_pages)
+      spin.hide();
     });
-  // spin.hide();
 }
 
 function renderMovies(movies) {
