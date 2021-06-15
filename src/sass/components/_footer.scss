@@ -60,6 +60,7 @@ footer {
 .student-photo {
   border: 1px solid var(--footer-bg-color);
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .student-desc {
