@@ -20,7 +20,7 @@ export default async function getFilms(nameList) {
     const userListMovies = userListStorage.split(',');
     userListMovies.forEach(async filmId => {
       try {
-        const film = await axios(`${BASE_URL}movie/${filmId}?api_key=${API_KEY}&language=ru-RU`);
+        const film = await axios(`${BASE_URL}movie/${filmId}?api_key=${API_KEY}`);
         const releaseDate = film.data.release_date.split('-')[0];
         film.data.release_date = releaseDate;
         movieListRef.insertAdjacentHTML('beforeend', movieListTPL(film.data));
