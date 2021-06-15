@@ -8,6 +8,14 @@ const refs = getRefs();
 export default async function getFilms(nameList) {
   const movieListRef = document.querySelector('.movie__list');
   const userListStorage = localStorage.getItem(nameList);
+
+  const watched = localStorage.getItem('watched');
+  const queue = localStorage.getItem('queue');
+  // console.log(watched);
+  if (watched !== null && queue !== null) {
+    refs.paginationSection.classList.add('is-hidden');
+  }
+
   if (userListStorage !== null) {
     const userListMovies = userListStorage.split(',');
     userListMovies.forEach(async filmId => {
