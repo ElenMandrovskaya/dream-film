@@ -1,9 +1,11 @@
 import userListBuilder from './userListBuilder';
 import refs from './getRefs';
+import { pagination } from './pagination';
 
 const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
 
 const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
+  pagination.currentPage = 1;//Добавила
   movieSection.innerHTML = '';
   if (secondNameList === null) {
     eve.preventDefault();
