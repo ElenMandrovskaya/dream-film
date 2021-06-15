@@ -25,6 +25,7 @@ export default
       backdrop: document.querySelector('.js-backdrop'),
       signOutBtn: document.querySelector('.js-singOut-button'),
       userName: document.querySelector('.js-display-username'),
+      paginationSection: document.querySelector('.section-pagination'),
   };
 }
 
