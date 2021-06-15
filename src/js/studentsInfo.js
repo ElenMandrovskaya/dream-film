@@ -4,14 +4,14 @@ export default [
     name: 'Елена Мандровская',
     position: 'Team Lead',
     ghLink: 'https://github.com/ElenMandrovskaya',
-    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), класса и мотодов "MoviesApi", кнопка "ScrollUp".',
+    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), кнопка "ScrollUp".',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=7834bf&/oleh.jpg',
     name: 'Олег Филяк',
     position: 'Scrum Master',
     ghLink: 'https://github.com/OlehFilyak',
-    work: 'Созданием спрайта и оптимизацией картинок. Версткой хедера. Отрисовкой главной страницы по клику на лого/кнопку "Home".',
+    work: 'Созданием спрайта и оптимизацией картинок. Версткой хедера и его динамическим изменением. Отрисовкой главной страницы по клику на лого/кнопку "Home".',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=44211d&/swetlana.jpg',
@@ -53,7 +53,7 @@ export default [
     name: 'Дима Марьянченко',
     position: 'Developer',
     ghLink: 'https://github.com/dimamarjan',
-    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", Версткой контейнера страницы "My Library" и отрисовкой библиотеки пользователя. Отрисовкой фильмов "Watched" и "Queue" по нажатию на соответствующие кнопки.',
+    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", Отрисовка и реализация работы страницы "My Library" и отрисовкой библиотеки пользователя.',
   },
    {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=e72968&/slava.jpg',
