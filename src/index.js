@@ -10,3 +10,4 @@ import './js/modalFilmCard';
 import './js/pagination';
 import './js/switchHeader';
 import './js/btnScrollTop';
+import './js/auth';

@@ -28,6 +28,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "basiclightbox": "^5.0.4",
+    "firebase": "^8.6.7",
+    "firebaseui": "^4.8.0",
     "pnotify": "^5.2.0",
     "spin.js": "^4.1.0"
   }

@@ -19,7 +19,6 @@
     <div class="container header">
       <div class="site-logo">
         <div class="logo__container">
-    
             <a class="logo__link link" href="./index.html">
                 <img class="icon-film" src="./images/svg/logo.svg" alt="Filmoteka" width="24" height="24">
                 <span class="site-logo__txt">Filmoteka</span>
@@ -33,9 +32,18 @@
                <li class="nav__list-item">
                    <a class="nav__list-link link nav-link-library" href="">MY LIBRARY</a>
                 </li>
+                <li class="nav__list-item">
+                  <button data-action="open-modal" class="logButton" type="button">
+                    sign In
+                  </button>
+                </li>
+                <li class="nav__list-item">
+                  <button class="js-singOut-button logButton" type="button">
+                    sign Out
+                  </button> 
+                </li>
             </ul>
       </div>
-
       <div class="toggle-container">
         <div class="menu-search">
           <form class="search-form" id="search-form">
@@ -59,6 +67,19 @@
           <button type="button" class="menu__btn button-queue" id="js-queue">QUEUE</button>
         </div>
       </div>
+    </div>
+    <div class="header-backdrop is-hidden js-backdrop">
+      <div class="header-modal" id="firebaseui-auth-container">
+        <button type="button" class="button-close-modal" data-action="close-modal">
+          <svg class="icon-modal-close" width="10" height="10">
+            <use href="./images/svg/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="display-userinfo">
+      <span class="display-user-logo"></span>
+      <span class="js-display-username"></span>
     </div>
   </header>
 
