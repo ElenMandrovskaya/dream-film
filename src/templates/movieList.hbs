@@ -1,18 +1,18 @@
 {{#each this}}
 <li class="movie__card" data-action='{{id}}'>
 
-    <div class="movie__el">
-<div class="btn-id">
-    
-    <button class="btn__trailer-icon btn__trailer" data-id='{{id}}'>▶</button>
-    <button class="btn__trailer-text btn__trailer" data-id='{{id}}'>Trailer</button>
+<div class="movie__el">
+    <div class="btn-id">
+        
+        <button class="btn__trailer-icon btn__trailer" data-id='{{id}}'>▶</button>
+        <button class="btn__trailer-text btn__trailer" data-id='{{id}}'>Trailer</button>
 
-</div>
+    </div>
     <div class="movie__link">
         <img class="movie__img" data-id={{id}} src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="{{title}}" 
         onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/d/d6/Image_coming_soon.png';"/>
     </div>
-<h2 class="movie__title">{{title}}</h2>
+    <h2 class="movie__title">{{title}}</h2>
     <div class="movie__text">
         <ul class="movie__genres_list">
         {{#each genre_ids}}
@@ -21,6 +21,6 @@
         </li> </ul>|&nbsp;<span class="movie__release_date">{{release_date}}</span>
             <span class="movie__vote_average">{{vote_average}}</span>
     </div>
-    </div>
+</div>
 </li>
 {{/each}}

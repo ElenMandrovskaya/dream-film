@@ -9,9 +9,12 @@
         onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/d/d6/Image_coming_soon.png';"
       />
     </div>
-    <h2 class='movie__card-title'>{{original_title}}</h2>
-    {{#each this.genres}}<p class='library__item-genre'>{{name}}</p>{{/each}}
-    <p class='movie__card-year'>{{release_date}}</p>
-    <p class='movie__card-vote'>{{vote_average}}</p>
+    <h2 class='movie__card-title movie__title'>{{original_title}}</h2>
+    <div class="movie__text"> 
+
+    {{#each this.genres}}<p class='library__item-genre movie__genres_list movie__genres'>{{name}}</p>{{/each}}
+    <p class='movie__card-year movie__release_date'>{{release_date}}</p>
+    <p class='movie__card-vote movie__vote_average'>{{vote_average}}</p>
+    </div>
   </li>
 {{/this}}
