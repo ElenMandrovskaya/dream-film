@@ -3,8 +3,6 @@ import axios from 'axios';
 import movieListTPL from '../templates/library.hbs';
 import { BASE_URL, API_KEY } from './constants';
 import { getTotalPage } from './pagination';// Добавила
-import getRefs from './getRefs';//Добавила
-const refs = getRefs();//Добавила
 
 export default async function getFilms(nameList) {
   const movieListRef = document.querySelector('.movie__list');
@@ -14,13 +12,15 @@ export default async function getFilms(nameList) {
   const queue = localStorage.getItem('queue');//Добавила
   const userTotalListStorage = [];//Добавила
   
-  if (watched !== null && queue !== null) { //Добавила
-    userTotalListStorage.push(...watched.split(','));//Добавила
-    userTotalListStorage.push(...queue.split(','))//Добавила
-    getTotalPage(Math.ceil(userTotalListStorage.length / 20));//Добавила
+  if (watched !== null) { //Добавила
+    userTotalListStorage.push(...watched.split(','));
+    if (queue !== null) { 
+      userTotalListStorage.push(...queue.split(','))
+    } 
+    getTotalPage(Math.ceil(userTotalListStorage.length / 20))
   }//Добавила
   
-  if (userListStorage !== null) {
+  // if (userListStorage !== null) {
     if (userListStorage) {
       const userListMovies = userListStorage.split(',');
 
@@ -35,10 +35,9 @@ export default async function getFilms(nameList) {
         } catch {
           err => console.log(err);
         }
-        
         getTotalPage(Math.ceil(totalUserFilms / 20));//Добавила
       });
-    }
-  }
+    } 
+  // }
 }
 
