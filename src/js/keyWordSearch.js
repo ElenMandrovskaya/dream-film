@@ -80,7 +80,7 @@ function onSearch(e) {
 function renderMovies(movies) {
     if (movies.total_results === 0) {
       refs.warning.classList.remove('is-hidden');
-      refs.navBtn.classList.add('is-hidden');
+      refs.paginationSection.classList.add('is-hidden');
         return;   
     };
     refs.warning.classList.add('is-hidden'); 
