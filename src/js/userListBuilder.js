@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import movieListTPL from '../templates/library.hbs';
 import { BASE_URL, API_KEY } from './constants';
+import getRefs from './getRefs';
+const refs = getRefs();
 
 export default async function getFilms(nameList) {
   const movieListRef = document.querySelector('.movie__list');
@@ -18,5 +20,7 @@ export default async function getFilms(nameList) {
         err => console.log(err);
       }
     });
+  } else {
+    refs.paginationSection.classList.add('is-hidden');
   }
 }
