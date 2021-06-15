@@ -11,3 +11,5 @@ import './js/pagination';
 import './js/switchHeader';
 import './js/btnScrollTop';
 import './js/auth';
+import './js/trailer'
+
