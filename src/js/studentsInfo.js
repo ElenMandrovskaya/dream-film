@@ -11,7 +11,7 @@ export default [
     name: 'Олег Филяк',
     position: 'Scrum Master',
     ghLink: 'https://github.com/OlehFilyak',
-    work: 'Созданием спрайта и оптимизацией картинок. Версткой хедера и его динамическим изменением. Отрисовкой главной страницы по клику на лого/кнопку "Home".',
+    work: 'Созданием спрайта и оптимизацией картинок. Версткой хедера и его динамическим изменением. Отрисовкой main page по клику на лого/кнопку "Home".',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=44211d&/swetlana.jpg',
