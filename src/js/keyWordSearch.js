@@ -80,8 +80,10 @@ function onSearch(e) {
 function renderMovies(movies) {
     if (movies.total_results === 0) {
       refs.warning.classList.remove('is-hidden');
-      refs.navBtn.classList.add('is-hidden');
-        return;   
+
+      refs.paginationSection.classList.add('is-hidden');// скрывает секцию пагинация при нулевом результате поиска
+        
+      return;
     };
     refs.warning.classList.add('is-hidden'); 
     refs.movieSection.innerHTML = movieListTpl(movies.results);
