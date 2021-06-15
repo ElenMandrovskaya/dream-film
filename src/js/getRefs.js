@@ -20,6 +20,7 @@ export default
       header: document.querySelector('.header'),
       studentsList: document.querySelector('.students-link'),
       scrollTop: document.querySelector('.scroll__top'),
+      paginationSection: document.querySelector('.section-pagination'),
 
   };
 }
