@@ -15,7 +15,7 @@
   </head>
   <body>
   <header class="header header__background-home">
-    <div class="js-display-username username"></div>
+      <span class="js-display-username username"></span>
     <div class="container header">
       <div class="site-logo">
         <div class="logo__container">
@@ -35,11 +35,17 @@
                 <li class="nav__list-item">
                   <button data-action="open-modal" class="signin-btn" type="button">
                     sign In
+                    <svg class="icon-modal-close" width="10" height="10">
+                      <use href="./images/svg/symbol-defs.svg#icon-close"></use>
+                    </svg>
                   </button>
                 </li>
                 <li class="nav__list-item">
                   <button class="js-singOut-button signin-btn" type="button">
                     sign Out
+                    <svg class="icon-modal-close" width="10" height="10">
+                      <use href="./images/svg/symbol-defs.svg#icon-close"></use>
+                    </svg>
                   </button> 
                 </li>
             </ul>

@@ -4,7 +4,6 @@ button {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.333;
-
   letter-spacing: 0.05em;
 
   &.pagination-list__item {
@@ -51,6 +50,8 @@ button {
 .scroll__top {
   display: none;
   position: fixed;
+  bottom: 100px;
+  right: 25px;
   align-items: center;
   justify-content: center;
   width: 50px;
@@ -59,8 +60,6 @@ button {
   border-radius: 50%;
   background-color: transparent;
   justify-content: center;
-  bottom: 130px;
-  right: 70px;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
@@ -68,6 +67,15 @@ button {
     border: none;
     fill: #fff;
     transition: fill 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media screen and (min-width: 768px) {
+    bottom: 130px;
+    right: 35px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    bottom: 130px;
+    right: 23px;
   }
 }
 .scroll__icon {

@@ -32,14 +32,14 @@ export default class Spin {
     }
 
     show() {
-        console.log('spinner show');
-        console.log(this.target);
+        // console.log('spinner show');
+        // console.log(this.target);
         // this.target.appendChild(this.spinner.el);
         this.spinner.spin(this.target);
     }
 
     hide() {
-        console.log('spinner hide');
+        // console.log('spinner hide');
         this.spinner.stop();
     }
 }
