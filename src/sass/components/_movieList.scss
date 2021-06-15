@@ -65,11 +65,12 @@
   margin-right: 10px;
 }
 .movie__vote_average {
+      height: fit-content;
   background-color: #ff6b08;
   border-radius: 5px;
   color: #ffffff;
   text-align: center;
-  padding: 0px 10px;
+  padding: 0px 8px;
 }
 .movie__img {
   margin-bottom: 10px;
@@ -122,12 +123,22 @@
 .movie__genres_list {
   display: flex;
   position: relative;
+      flex-flow: wrap;
 }
 .movie__genres {
   display: block; 
   white-space: nowrap; 
   margin-right: 5px;
 }
+.library__item-genre{
+   font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #ff6b08;
+}
+
 .movie__genres:not(:last-child)::after {
   content: ',';
 
