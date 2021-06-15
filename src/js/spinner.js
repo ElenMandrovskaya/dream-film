@@ -1,8 +1,9 @@
 import { Spinner } from "spin.js";
+import 'spin.js/spin.css';
 
-class Spinner {
-    constructor() {
-        this.option = {
+export default class Spin {
+    constructor(id) {
+            this.option = {
             lines: 11, // The number of lines to draw
             length: 0, // The length of each line
             width: 18, // The line thickness
@@ -21,14 +22,24 @@ class Spinner {
             zIndex: 2000000000, // The z-index (defaults to 2e9)
             className: 'spinner', // The CSS class to assign to the spinner
             position: 'absolute', // Element positioning
-};
+        };
+        
+        this.target = document.getElementById(id);
+
+        this.spinner = new Spinner(this.option);
+       
+        // this.spinner = new Spinner(this.option).spin();
     }
 
     show() {
         console.log('spinner show');
+        console.log(this.target);
+        // this.target.appendChild(this.spinner.el);
+        this.spinner.spin(this.target);
     }
 
     hide() {
         console.log('spinner hide');
+        this.spinner.stop();
     }
 }

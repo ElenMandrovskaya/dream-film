@@ -39,8 +39,10 @@ import { pagination, getTotalPage, setPageList } from './pagination';
 import MoviesApi from './apiService';
 import movieListTpl from '../templates/movieList.hbs'
 import getRefs from './getRefs';
+import Spin from './spinner';
 
 const moviesApi = new MoviesApi();
+const spin = new Spin('spinner-root');
 const refs = getRefs();
 let searchQuery = '';
 
@@ -51,8 +53,10 @@ refs.navBtn.addEventListener('click', onClickNavBtn);
 function onClickNavBtn(e) {
     if (e.target.nodeName !== 'BUTTON') {
     moviesApi.selectPage(pagination.currentPage);
-    refs.movieSection.innerHTML = '';
-    moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
+      refs.movieSection.innerHTML = '';
+      spin.show()
+      moviesApi.getMoviesWithGenre(searchQuery).then(renderMovies);
+      spin.hide();
   }
 }
 
@@ -71,9 +75,11 @@ function onSearch(e) {
     moviesApi.resetPage();
     refs.searchForm.reset();
     
+  spin.show();
     moviesApi.getMoviesWithGenre(searchQuery).then(response => {
         renderMovies(response);
-        getTotalPage(response.total_pages)
+      getTotalPage(response.total_pages)
+      spin.hide();
     });
 }
 
