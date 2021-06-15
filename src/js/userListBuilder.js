@@ -9,17 +9,18 @@ const refs = getRefs();//Добавила
 export default async function getFilms(nameList) {
   const movieListRef = document.querySelector('.movie__list');
   const userListStorage = localStorage.getItem(nameList);
+
+  const watched = localStorage.getItem('watched');//Добавила
+  const queue = localStorage.getItem('queue');//Добавила
+  const userTotalListStorage = [];//Добавила
   
-  if (userListStorage !== null) {
-    const watched = localStorage.getItem('watched');//Добавила
-    const queue = localStorage.getItem('queue');//Добавила
-    
-    const userTotalListStorage = [];//Добавила
-    
+  if (watched !== null && queue !== null) { //Добавила
     userTotalListStorage.push(...watched.split(','));//Добавила
     userTotalListStorage.push(...queue.split(','))//Добавила
     getTotalPage(Math.ceil(userTotalListStorage.length / 20));//Добавила
-    
+  }//Добавила
+  
+  if (userListStorage !== null) {
     if (userListStorage) {
       const userListMovies = userListStorage.split(',');
 
@@ -34,12 +35,10 @@ export default async function getFilms(nameList) {
         } catch {
           err => console.log(err);
         }
-
+        
         getTotalPage(Math.ceil(totalUserFilms / 20));//Добавила
       });
     }
-  } else {
-    refs.paginationSection.classList.add('is-hidden');// скрывает секцию пагинация при нулевом результате поиска
   }
 }
 
