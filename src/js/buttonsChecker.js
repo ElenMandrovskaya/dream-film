@@ -1,4 +1,4 @@
-export default function checkButtonsActive(filmId) {
+export function checkButtonsActive(filmId) {
   const buttonsAdd = document.querySelectorAll('.storage__input.visually-hidden');
   const watchedBtn = buttonsAdd[0];
   const queueBtn = buttonsAdd[1];
@@ -8,15 +8,32 @@ export default function checkButtonsActive(filmId) {
 
   if (watchedData !== null) {
     const watchedList = watchedData.split(',');
-
     if (watchedList.includes(filmId)) {
       watchedBtn.checked = true;
+      watchedBtn.nextElementSibling.textContent = 'WATCHED';
     }
   }
   if (queueData !== null) {
     const queueList = queueData.split(',');
     if (queueList.includes(filmId)) {
       queueBtn.checked = true;
+      queueBtn.nextElementSibling.textContent = 'QUEUE';
     }
+  }
+}
+
+export function buttonSwitcher(filmId) {
+  const buttonsAdd = document.querySelectorAll('.storage__input.visually-hidden');
+  const watchedBtn = buttonsAdd[0];
+  const queueBtn = buttonsAdd[1];
+  if (filmId.target.id === 'js-queue') {
+    watchedBtn.checked = false;
+    watchedBtn.nextElementSibling.textContent = 'TO WATCHED';
+    queueBtn.nextElementSibling.textContent = 'QUEUE';
+  }
+  if (filmId.target.id === 'js-watched') {
+    queueBtn.checked = false;
+    queueBtn.nextElementSibling.textContent = 'TO QUEUE';
+    watchedBtn.nextElementSibling.textContent = 'WATCHED';
   }
 }

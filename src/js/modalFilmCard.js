@@ -1,7 +1,7 @@
 import modalFilmCard from '../templates/modal.hbs';
 
 import listStorege from './listsStorage';
-import checkButtonsActive from './buttonsChecker';
+import { checkButtonsActive, buttonSwitcher } from './buttonsChecker';
 
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
@@ -43,27 +43,31 @@ function openModal(e) {
         if (e.code === 'Escape') {
           modal.close();
           window.removeEventListener('keydown', closeModalHandler);
+          addToWachedBtn.removeEventListener('click');
         }
       }
 
       function closeModal(e) {
         modal.close();
         window.removeEventListener('keydown', closeModalHandler);
+        addToWachedBtn.removeEventListener('click');
       }
 
-      const addToWachedBtn = document.querySelector(".storage");
+      const addToWachedBtn = document.querySelector('.storage');
       const filmId = e.target.dataset.id;
 
       checkButtonsActive(filmId);
 
-      addToWachedBtn.addEventListener("click", (event) => {
-        if (event.target.id === "js-watched") {
+      addToWachedBtn.addEventListener('click', event => {
+        if (event.target.id === 'js-watched') {
           const filmId = event.target.dataset.filmId;
-          listStorege("watched", filmId);
+          listStorege('watched', filmId);
+          buttonSwitcher(event);
         }
-        if (event.target.id === "js-queue") {
+        if (event.target.id === 'js-queue') {
           const filmId = event.target.dataset.filmId;
-          listStorege("queue", filmId);
+          listStorege('queue', filmId);
+          buttonSwitcher(event);
         }
       });
     })
@@ -72,4 +76,3 @@ function openModal(e) {
       console.log('oops!');
     });
 }
-
