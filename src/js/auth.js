@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebaseui';
-import '../../node_modules/firebaseui/dist/firebaseui.css';
+import '../../node_modules/firebaseui/dist/firebaseui.css';  
 import getRefs from './getRefs';
 const refs = getRefs();
 
@@ -13,12 +13,12 @@ refs.backdrop.addEventListener('click', onBackdropClick);
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
   refs.backdrop.classList.remove('is-hidden');
-  document.body.classList.add('show-modal');
+  document.body.classList.add('modal-is-active');
 }
 
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
-  document.body.classList.remove('show-modal');
+  document.body.classList.remove('modal-is-active');
 }
 
 function onBackdropClick(event) {
@@ -26,23 +26,19 @@ function onBackdropClick(event) {
     onCloseModal();
   }
 }
-
 function onEscKeyPress(event) {
-  const ESC_KEY_CODE = 'Escape';
-  const isEscKey = event.code === ESC_KEY_CODE;
-
-  if (isEscKey) {
+  if (event.code === 'Escape') {
     onCloseModal();
   }
 }
-function showLogOutbutton() {
-  refs.logOutbutton.classList.remove('is-hidden');
+function showsignOutBtn() {
+  refs.signOutBtn.classList.remove('is-hidden');
   refs.openModalBtn.classList.add('is-hidden');
 }
 
 function showOpenModalBtn() {
   refs.openModalBtn.classList.remove('is-hidden');
-  refs.logOutbutton.classList.add('is-hidden');
+  refs.signOutBtn.classList.add('is-hidden');
 }
 
 const firebaseConfig = {
@@ -78,7 +74,7 @@ const uiConfig = {
     },
   },
 };
-refs.logOutbutton.addEventListener('click', e => {
+refs.signOutBtn.addEventListener('click', e => {
   firebase.auth().signOut();
   localStorage.removeItem('currentUserId');
   window.location.reload();
@@ -91,8 +87,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       displayName = 'guest';
     }
     refs.userName.innerHTML = `${displayName}`;
-    document.body.classList.remove('show-modal');
-    showLogOutbutton();
+    document.body.classList.remove('modal-is-active');
+    showsignOutBtn();
     localStorage.setItem('currentUserId', JSON.stringify(firebaseUser.uid));
     currentUserId = JSON.parse(localStorage.getItem('currentUserId'));
     // console.log(currentUserId);
@@ -110,8 +106,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 function setUserData(userId) {
   const userLibrary = {
     userId: userId,
-    userWatched: [],
-    userQueue: [],
+    // userWatched: [],
+    // userQueue: [],
   };
   const updates = {};
   updates['users/' + userId] = userLibrary;

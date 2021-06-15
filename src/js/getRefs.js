@@ -23,7 +23,7 @@ export default
       openModalBtn: document.querySelector('[data-action="open-modal"]'),
       closeModalBtn: document.querySelector('[data-action="close-modal"]'),
       backdrop: document.querySelector('.js-backdrop'),
-      logOutbutton: document.querySelector('.js-singOut-button'),
+      signOutBtn: document.querySelector('.js-singOut-button'),
       userName: document.querySelector('.js-display-username'),
   };
 }
