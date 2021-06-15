@@ -39,8 +39,10 @@ import { pagination, getTotalPage, setPageList } from './pagination';
 import MoviesApi from './apiService';
 import movieListTpl from '../templates/movieList.hbs'
 import getRefs from './getRefs';
+import Spin from './spinner';
 
 const moviesApi = new MoviesApi();
+const spin = new Spin('spinner-root');
 const refs = getRefs();
 let searchQuery = '';
 
@@ -71,10 +73,12 @@ function onSearch(e) {
     moviesApi.resetPage();
     refs.searchForm.reset();
     
+  // spin.show();
     moviesApi.getMoviesWithGenre(searchQuery).then(response => {
         renderMovies(response);
         getTotalPage(response.total_pages)
     });
+  // spin.hide();
 }
 
 function renderMovies(movies) {

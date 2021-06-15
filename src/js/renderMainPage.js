@@ -30,8 +30,12 @@ import { pagination, next, prev, getTotalPage, setPageList } from './pagination'
 import movieList from '../templates/movieList.hbs'
 import getRefs from './getRefs';
 import MoviesApi from './apiService';
+import Spin from './spinner';
+// import { Spinner } from 'spin.js';
+// import 'spin.js/spin.css';
 
 const moviesApi = new MoviesApi();
+const spin = new Spin('spinner-root');
 const refs = getRefs();
 
 getTotalPage(pagination.totalPage);
@@ -72,9 +76,19 @@ function renderMoviesList(movies){
     refs.movieSection.insertAdjacentHTML('beforeend', markup);
 };
 
+
+
+
 moviesApi.getTrendingMoviesWithGenre().then(response => {
     getTotalPage(response.total_pages);
+
+    spin.show();
     renderMoviesList(response.results);
-})
+    console.log('spin.hide');
+    spin.hide();
+});
+
+// spin.hide();
+
 
 document.addEventListener('DOMContentLoaded', setPageList, false);
