@@ -24,17 +24,19 @@
   width: 280px;
 
   @media screen and (min-width: 768px) {
-    margin-top: 100px;
+    margin-top: 0;
     min-height: 562px;
     width: 618px;
     display: flex;
+    border-radius: 10px;
   }
 
   @media screen and (min-width: 1024px) {
     width: 882px;
     min-height: 568px;
-    margin-top: 100px;
+    margin-top: 0;
     display: flex;
+    border-radius: 10px;
   }
 }
 
