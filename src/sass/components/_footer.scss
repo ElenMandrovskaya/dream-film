@@ -60,6 +60,7 @@ footer {
 .student-photo {
   border: 1px solid var(--footer-bg-color);
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .student-desc {
@@ -97,7 +98,7 @@ footer {
 
 .student-work {
   color: var(--footer-text-color);
-  font-size: 12px;
+  font-size: 14px;
   @media screen and (max-width: 767px) {
     font-size: 12px;
   }
