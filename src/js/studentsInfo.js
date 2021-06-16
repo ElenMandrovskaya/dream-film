@@ -4,7 +4,7 @@ export default [
     name: 'Елена Мандровская',
     position: 'Team Lead',
     ghLink: 'https://github.com/ElenMandrovskaya',
-    work:'Созданием базовой структуры проекта. Координацией команды в правильном направлении. Соданием запросов на API (ApiService), кнопка "ScrollUp".',
+    work:'Созданием базовой структуры проекта и координацией команды. Соданием запросов на API (ApiService), кнопкой "ScrollUp", реализацией регистрации с помощью FireBase.',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=7834bf&/oleh.jpg',
@@ -39,7 +39,7 @@ export default [
     name: 'Инна Дмитренко',
     position: 'Developer',
     ghLink: 'https://github.com/inna-dmytrenko',
-    work:'Версткой контейнера главной страницы для правильного позиционирования карточек фильмов. Кнопка трейлера.',
+    work:'Версткой контейнера главной страницы для правильного позиционирования карточек фильмов. Реализацией запуска трейлера',
   },
   {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=613b0d&/suzanna.jpg',
@@ -53,14 +53,14 @@ export default [
     name: 'Дима Марьянченко',
     position: 'Developer',
     ghLink: 'https://github.com/dimamarjan',
-    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", Отрисовка и реализация работы страницы "My Library" и отрисовкой библиотеки пользователя.',
+    work:'Реализацией функционала кнопок: "Add to watched", "Add to queue", Отрисовкой и реализацией работы страницы "My Library" и отрисовкой библиотеки пользователя.',
   },
    {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=e72968&/slava.jpg',
     name: 'Вячеслав Грач',
     position: 'Developer',
     ghLink: 'https://github.com/SlavaGrach',
-    work:' Версткой и поключением Loader для асинхронных запросов. Рендер популярных фильмов на главную страницу.',
+    work:' Версткой и поключением Loader для асинхронных запросов. Рендером популярных фильмов на главную страницу.',
   },
     {
     photo: 'https://wdfiles.ru/plugins/imageviewer/site/direct.php?s=fcbd9d&/valentin.jpg',
