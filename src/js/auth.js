@@ -6,9 +6,9 @@ import '../../node_modules/firebaseui/dist/firebaseui.css';
 import getRefs from './getRefs';
 const refs = getRefs();
 
-refs.openModalBtn.addEventListener('click', onOpenModal),
-refs.closeModalBtn.addEventListener('click', onCloseModal),
-refs.backdrop.addEventListener('click', onBackdropClick);
+refs.signInBtn.addEventListener('click', onOpenModal),
+refs.closeModal.addEventListener('click', onCloseModal),
+refs.backdrop.addEventListener('click', onBackdrop);
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
@@ -21,7 +21,7 @@ function onCloseModal() {
   document.body.classList.remove('modal-is-active');
 }
 
-function onBackdropClick(event) {
+function onBackdrop(event) {
   if (event.currentTarget === event.target) {
     onCloseModal();
   }
@@ -31,15 +31,17 @@ function onEscKeyPress(event) {
     onCloseModal();
   }
 }
-function showsignOutBtn() {
+function activeSignOut() {
   refs.signOutBtn.classList.remove('is-hidden');
-  refs.openModalBtn.classList.add('is-hidden');
+  refs.signInBtn.classList.add('is-hidden');
 }
 
-function showOpenModalBtn() {
-  refs.openModalBtn.classList.remove('is-hidden');
+function activeSignIn() {
+  refs.signInBtn.classList.remove('is-hidden');
   refs.signOutBtn.classList.add('is-hidden');
 }
+
+// FIREBASE
 
 const firebaseConfig = {
     apiKey: "AIzaSyDnCEIIOJCFL91SC_rnap8gXfT07xMlAL0",
@@ -52,64 +54,38 @@ const firebaseConfig = {
 };
   
 firebase.initializeApp(firebaseConfig);
-const ui = new firebaseui.auth.AuthUI(firebase.auth());
-const uiStart = () => ui.start('#firebaseui-auth-container', uiConfig);
+const authUI = new firebaseui.auth.AuthUI(firebase.auth());
+const authStart = () => authUI.start('#firebaseui-auth-container', modalConfig);
 
-let currentUserId = '';
-
-const uiConfig = {
+const modalConfig = {
   signInFlow: 'popup',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-  ],
-  callbacks: {
-    signInSuccessWithAuthResult: function (authResult) {
-      if (authResult) {
-        location.reload();
-
-        setUserData(firebaseUser.uid);
-        return true;
-      }
-    },
-  },
+  ]
 };
+let currentUserId = '';
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if (firebaseUser) {
+    let displayName = firebaseUser.displayName;
+    refs.userName.innerHTML = `${displayName}`;
+    document.body.classList.remove('modal-is-active');
+    activeSignOut();
+    localStorage.setItem('currentUserId', JSON.stringify(firebaseUser.uid));
+    currentUserId = JSON.parse(localStorage.getItem('currentUserId'));
+  } else {
+    refs.userName.innerHTML = '';
+    activeSignIn();
+    authStart();
+  }
+});
+
 refs.signOutBtn.addEventListener('click', e => {
   firebase.auth().signOut();
   localStorage.removeItem('currentUserId');
   window.location.reload();
 });
 
-firebase.auth().onAuthStateChanged(firebaseUser => {
-  if (firebaseUser) {
-    let displayName = firebaseUser.displayName;
-    if (displayName === null) {
-      displayName = 'guest';
-    }
-    refs.userName.innerHTML = `${displayName}`;
-    document.body.classList.remove('modal-is-active');
-    showsignOutBtn();
-    localStorage.setItem('currentUserId', JSON.stringify(firebaseUser.uid));
-    currentUserId = JSON.parse(localStorage.getItem('currentUserId'));
-    // console.log(currentUserId);
 
-    // if (!getUserLibraryFromDatabase(currentUserId)) {
-    //   setUserData(currentUserId);
-    // }
-  } else {
-    refs.userName.innerHTML = '';
-    showOpenModalBtn();
-    uiStart();
-  }
-});
 
-function setUserData(userId) {
-  const userLibrary = {
-    userId: userId,
-    // userWatched: [],
-    // userQueue: [],
-  };
-  const updates = {};
-  updates['users/' + userId] = userLibrary;
-  return firebase.database().ref().update(updates);
-}
