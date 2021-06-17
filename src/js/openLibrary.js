@@ -1,18 +1,17 @@
-import { getFilms, getterFilmList, innerUserListBuilder } from './userListBuilder';
+import { getFilms, getterFilmList } from './userListBuilder';
 import { paginationList, builPaginationContainer } from './paginationMyLibrary';
 import refs from './getRefs';
 
-const { movieSection, myLibrary, watchedBtn, queueBtn, header } = refs();
+const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
 
 let mainMoviesArr = [];
 
 myLibrary.addEventListener('click', event => {
   event.preventDefault();
-  movieSection.innerHTML = '';
-  mainMoviesArr = getFilms('allUserFilms');
-
   const mainPaginationSection = document.querySelector('.section-pagination');
   mainPaginationSection.classList = 'section-pagination is-hidden';
+  movieSection.innerHTML = '';
+  mainMoviesArr = getFilms('allUserFilms');
 });
 
 watchedBtn.addEventListener('click', event => {
