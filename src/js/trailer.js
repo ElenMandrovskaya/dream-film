@@ -13,16 +13,19 @@ trailerBtn.addEventListener('click', e => {
     }
     else {
       modalTrailer(e.target.dataset.id);
+    
   }
 })
 
 function modalTrailer(id) {
   
-    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`;
+  console.log(id)
     fetch(url)
       .then(response => response.json())
       .then(data => {
         const id = data.results[0].key;
+        
         const instance = basicLightbox.create(`
   <iframe width="560" height="315" src='https://www.youtube.com/embed/${id}'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 `);
