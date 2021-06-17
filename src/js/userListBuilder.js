@@ -10,7 +10,6 @@ const refs = getRefs();
 export function getterFilmList(page) {
   const movieListRef = document.querySelector('.movie__list');
   movieListRef.innerHTML = '';
-  console.log(movieListRef);
   page.forEach(async filmId => {
     try {
       const film = await axios(`${BASE_URL}movie/${filmId}?api_key=${API_KEY}&language=ru-RU`);
