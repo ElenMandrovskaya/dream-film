@@ -2,7 +2,7 @@ import { getFilms, getterFilmList } from './userListBuilder';
 import { paginationList, builPaginationContainer } from './paginationMyLibrary';
 import refs from './getRefs';
 
-const { movieSection, myLibrary, watchedBtn, queueBtn, header } = refs();
+const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
 
 let mainMoviesArr = [];
 
