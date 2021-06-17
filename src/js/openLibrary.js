@@ -8,11 +8,10 @@ let mainMoviesArr = [];
 
 myLibrary.addEventListener('click', event => {
   event.preventDefault();
-  movieSection.innerHTML = '';
-  mainMoviesArr = getFilms('allUserFilms');
-
   const mainPaginationSection = document.querySelector('.section-pagination');
   mainPaginationSection.classList = 'section-pagination is-hidden';
+  movieSection.innerHTML = '';
+  mainMoviesArr = getFilms('allUserFilms');
 });
 
 watchedBtn.addEventListener('click', event => {
