@@ -1,28 +1,41 @@
-import userListBuilder from './userListBuilder';
+import { getFilms, getterFilmList, innerUserListBuilder } from './userListBuilder';
+import { paginationList, builPaginationContainer } from './paginationMyLibrary';
 import refs from './getRefs';
 
-const { movieSection, myLibrary, watchedBtn, queueBtn } = refs();
+const { movieSection, myLibrary, watchedBtn, queueBtn, header } = refs();
 
-const buildList = (builderFunction, eve, nameList, secondNameList = null) => {
-  movieSection.innerHTML = '';
-  if (secondNameList === null) {
-    eve.preventDefault();
-    builderFunction(nameList);
-  } else {
-    eve.preventDefault();
-    builderFunction(nameList);
-    builderFunction(secondNameList);
-  }
-};
+let mainMoviesArr = [];
 
 myLibrary.addEventListener('click', event => {
-  buildList(userListBuilder, event, 'watched', 'queue');
+  event.preventDefault();
+  movieSection.innerHTML = '';
+  mainMoviesArr = getFilms('allUserFilms');
+
+  const mainPaginationSection = document.querySelector('.section-pagination');
+  mainPaginationSection.classList = 'section-pagination is-hidden';
 });
 
 watchedBtn.addEventListener('click', event => {
-  buildList(userListBuilder, event, 'watched');
+  event.preventDefault();
+  movieSection.innerHTML = '';
+  mainMoviesArr = getFilms('watched');
 });
 
 queueBtn.addEventListener('click', event => {
-  buildList(userListBuilder, event, 'queue');
+  event.preventDefault();
+  movieSection.innerHTML = '';
+  mainMoviesArr = getFilms('queue');
+});
+
+const paginationSection = document.querySelector('.pagination_library');
+
+paginationSection.addEventListener('click', event => {
+  if (event.target.classList.value === 'pagination-list__item_library') {
+    const targetPage = event.target.dataset.pageNumber;
+    mainMoviesArr.forEach(elem => (elem.button = 'pagination-list__item_library'));
+    mainMoviesArr[targetPage - 1].button = 'pagination-list__item_library active';
+    getterFilmList(mainMoviesArr[targetPage - 1].list);
+    const targetArray = paginationList(targetPage, mainMoviesArr);
+    builPaginationContainer(targetArray);
+  }
 });

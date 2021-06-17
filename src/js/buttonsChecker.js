@@ -10,14 +10,14 @@ export function checkButtonsActive(filmId) {
     const watchedList = watchedData.split(',');
     if (watchedList.includes(filmId)) {
       watchedBtn.checked = true;
-      watchedBtn.nextElementSibling.textContent = 'WATCHED';
+      watchedBtn.nextElementSibling.textContent = 'REMOVE';
     }
   }
   if (queueData !== null) {
     const queueList = queueData.split(',');
     if (queueList.includes(filmId)) {
       queueBtn.checked = true;
-      queueBtn.nextElementSibling.textContent = 'QUEUE';
+      queueBtn.nextElementSibling.textContent = 'REMOVE';
     }
   }
 }
@@ -29,11 +29,11 @@ export function buttonSwitcher(filmId) {
   if (filmId.target.id === 'js-queue') {
     watchedBtn.checked = false;
     watchedBtn.nextElementSibling.textContent = 'TO WATCHED';
-    queueBtn.nextElementSibling.textContent = 'QUEUE';
+    queueBtn.nextElementSibling.textContent = 'REMOVE';
   }
   if (filmId.target.id === 'js-watched') {
     queueBtn.checked = false;
     queueBtn.nextElementSibling.textContent = 'TO QUEUE';
-    watchedBtn.nextElementSibling.textContent = 'WATCHED';
+    watchedBtn.nextElementSibling.textContent = 'REMOVE';
   }
 }

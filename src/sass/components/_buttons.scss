@@ -6,7 +6,8 @@ button {
   line-height: 1.333;
   letter-spacing: 0.05em;
 
-  &.pagination-list__item {
+  &.pagination-list__item,
+  &.pagination-list__item_library {
     border: none;
     width: 30px;
     height: 40px;
@@ -36,7 +37,9 @@ button {
   }
 
   &.preview-button,
-  &.next-button {
+  &.preview-button_library,
+  &.next-button,
+  &.next-button_library {
     border: none;
     padding: 0 12px;
     height: 40px;
