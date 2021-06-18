@@ -86,7 +86,7 @@ li {
   margin-bottom: 37px;
   display: flex;
   justify-content: space-between;
-  justify-content: baseline;
+  align-items: baseline;
 
   @media screen and (min-width: 768px) {
     padding-top: 41px;
@@ -195,15 +195,19 @@ li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0;
-
+  width: 240px;
   &-item {
     font-family: var(--primary-font-family);
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.17;
     text-transform: uppercase;
-    color: (--secondary-text-color);
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    @media screen and (min-width: 1024px) {
+      font-size: 12px;
+    }
 
     &:not(:last-child) {
       margin-right: 39px;

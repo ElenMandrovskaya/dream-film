@@ -19,8 +19,8 @@
   <body>
     <header class="header header__background-home">
       <span class="js-display-username username"></span>
-      <div class="container header">
-        <div class="site-logo">
+      <div class="container">
+        <nav class="site-logo">
           <div class="logo__container">
             <a class="logo__link link" href="./index.html">
               <img
@@ -42,23 +42,20 @@
               <a class="nav__list-link link nav-link-library" href="">MY LIBRARY</a>
             </li>
             <li class="nav__list-item">
-              <button data-action="open-modal" class="signin-btn" type="button">
+              <a data-action="open-modal" class="signin-btn nav__list-link">
                 sign In
-                <svg class="icon-modal-close" width="10" height="10">
-                  <use href="./images/svg/symbol-defs.svg#icon-close"></use>
-                </svg>
-              </button>
-            </li>
-            <li class="nav__list-item">
-              <button class="js-singOut-button signin-btn" type="button">
+              </a>
+              <a class="js-singOut-button signin-btn nav__list-link">
                 sign Out
-                <svg class="icon-modal-close" width="10" height="10">
-                  <use href="./images/svg/symbol-defs.svg#icon-close"></use>
-                </svg>
-              </button>
+              </a>
             </li>
+            <!-- <li class="nav__list-item">
+              <a class="js-singOut-button signin-btn nav__list-link">
+                sign Out
+              </a>
+            </li> -->
           </ul>
-        </div>
+        </nav>
         <div class="toggle-container">
           <div class="menu-search">
             <form class="search-form" id="search-form">
