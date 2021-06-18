@@ -22,11 +22,15 @@ footer {
 
 .students-list {
   display: flex;
-  justify-content: space-between;
+
+  justify-content: center;
   flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 50px;
   margin: -8px;
+  @media screen and (min-width: 1024px) {
+    justify-content: space-between;
+  }
 }
 .student {
   background-color: var(--footer-bg-color);
@@ -123,8 +127,8 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
