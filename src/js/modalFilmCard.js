@@ -50,7 +50,6 @@ function openModal(e) {
       function closeModal(e) {
         modal.close();
         window.removeEventListener('keydown', closeModalHandler);
-        addToWachedBtn.removeEventListener('click');
       }
 
       const addToWachedBtn = document.querySelector('.storage');

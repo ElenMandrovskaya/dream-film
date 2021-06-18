@@ -30,10 +30,16 @@ export function buttonSwitcher(filmId) {
     watchedBtn.checked = false;
     watchedBtn.nextElementSibling.textContent = 'TO WATCHED';
     queueBtn.nextElementSibling.textContent = 'REMOVE';
+    if (queueBtn.checked === true) {
+      queueBtn.nextElementSibling.textContent = 'TO QUEUE';
+    }
   }
   if (filmId.target.id === 'js-watched') {
     queueBtn.checked = false;
     queueBtn.nextElementSibling.textContent = 'TO QUEUE';
     watchedBtn.nextElementSibling.textContent = 'REMOVE';
+    if (watchedBtn.checked === true) {
+      watchedBtn.nextElementSibling.textContent = 'TO WATCHED';
+    }
   }
 }
