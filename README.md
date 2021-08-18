@@ -1,32 +1,57 @@
-Елена Мандровская Team Lead <a href='https://github.com/ElenMandrovskaya'>gitHub</a> Работал(-а)
-над: ➤ Созданием базовой структуры проекта и координацией команды. Соданием запросов на API
+Елена Мандровская 
+Team Lead 
+<a href='https://github.com/ElenMandrovskaya'>gitHub</a> 
+Работал(-а) над: ➤ Созданием базовой структуры проекта и координацией команды. Соданием запросов на API
 (ApiService), кнопкой "ScrollUp", реализацией регистрации с помощью FireBase.
 
-Олег Филяк Scrum Master <a href='https://github.com/OlehFilyak'>gitHub</a>  
-Работал(-а) над: ➤ Созданием спрайта и оптимизацией картинок. Версткой хедера и его динамическим
+Олег Филяк 
+Scrum Master 
+<a href='https://github.com/OlehFilyak'>gitHub</a>  
+Работал(-а) над: ➤ 
+Созданием спрайта и оптимизацией картинок. Версткой хедера и его динамическим
 изменением. Отрисовкой main page по клику на лого/кнопку "Home".
 
-Дима Марьянченко Developer <a href='https://github.com/dimamarjan'>gitHub</a> Работал(-а) над: ➤
+Дима Марьянченко 
+Developer 
+<a href='https://github.com/dimamarjan'>gitHub</a> 
+Работал(-а) над: ➤
 Реализацией функционала кнопок: "Add to watched", "Add to queue", Отрисовкой и реализацией работы
 страницы "My Library" и отрисовкой библиотеки пользователя.Oтрисовкой фильмов "Watched" и "Queue" по
 нажатию на соответствующие кнопки.
 
-Оксана Зеленевская Developer <a href='https://github.com/OksanaZel'>gitHub</a> Работал(-а) над: ➤
+Оксана Зеленевская 
+Developer 
+<a href='https://github.com/OksanaZel'>gitHub</a> 
+Работал(-а) над: ➤
 Версткой и подключением номера страниц (пагинация) на главной странице.
 
-Екатерина Верещагина Developer <a href='https://github.com/EkaterinaVEA'>gitHub</a> Работал(-а) над:
-➤ Версткой карточки фильма открывающегося в модалке. Реализацией открытия и закрытия модалки.
+Екатерина Верещагина 
+Developer 
+<a href='https://github.com/EkaterinaVEA'>gitHub</a> 
+Работал(-а) над: ➤ 
+Версткой карточки фильма открывающегося в модалке. Реализацией открытия и закрытия модалки.
 
-Инна Дмитренко Developer <a href='https://github.com/inna-dmytrenko'>gitHub</a> Работал(-а) над: ➤
+Инна Дмитренко 
+Developer 
+<a href='https://github.com/inna-dmytrenko'>gitHub</a> 
+Работал(-а) над: ➤
 Версткой контейнера главной страницы для правильного позиционирования карточек фильмов. Реализацией
 запуска трейлера
 
-Светлана Лазарева Developer <a href='https://github.com/sweetlanas'>gitHub</a> Работал(-а) над: ➤
+Светлана Лазарева 
+Developer 
+<a href='https://github.com/sweetlanas'>gitHub</a> 
+Работал(-а) над: ➤
 Версткой футера. Модалкой с информацией об участниках нашей команды.
 
-Сюзанна Максимова Developer <a href='https://github.com/Suizanna'>gitHub</a> Работал(-а) над: ➤
+Сюзанна Максимова 
+Developer 
+<a href='https://github.com/Suizanna'>gitHub</a> 
+Работал(-а) над: ➤
 Реализацией поиска и отрисовки фильмов по ключевому слову.
 
-Вячеслав Грач Developer <a href='https://github.com/SlavaGrach'>gitHub</a> Работал(-а) над: ➤
+Вячеслав Грач 
+Developer <a href='https://github.com/SlavaGrach'>gitHub</a> 
+Работал(-а) над: ➤
 Версткой и поключением Loader для асинхронных запросов. Рендером популярных фильмов на главную
 страницу.
